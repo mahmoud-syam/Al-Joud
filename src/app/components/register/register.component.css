@@ -1,0 +1,34 @@
+.register-page{
+    font-family: var(--font-family) !important;
+    background-image: url("../../../assets/Gallary/background.png");
+    background-size: 100% 100%;
+    background-position: center ;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.form-control {
+background-color: transparent !important;
+}
+.form-control input{
+border: 1px solid #795227 !important;
+border-radius: 13px !important;
+-webkit-border-radius: 13px !important;
+-moz-border-radius: 13px !important;
+-ms-border-radius: 13px !important;
+-o-border-radius: 13px !important;
+font-size: 18px ;
+font-weight: 600;
+line-height: 1.6 !important;
+background-color: transparent !important;
+}
+hr{
+color: #795227;
+}
+.btn-main{
+padding: 5px;
+margin: 10px
+}
+.register-page .img-reg{
+    width: 8% !important;
+}

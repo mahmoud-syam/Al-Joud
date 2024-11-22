@@ -1,0 +1,66 @@
+<section class="login-page pt-100 min-vh-100">
+    <div class="container">
+        <div class="login-title">
+            <h2 class="text-uppercase font-color fw-bold">login</h2>
+        </div>
+        <hr>
+        <form class="form-control border-0 p-0 pt-2 " [formGroup]="loginForm" (ngSubmit)="handleForm()">
+            <div class="row d-flex align-items-center justify-content-center ">
+                <div class="right col-md-12 text-center">
+                    <img class="img-login" src="../../../assets/Main-Logo.png" alt="Main-Logo">
+                </div>
+                <div class="left col-md-12 text-center mt-4">
+                    <!-- Email -->
+                    <div class="form-group w-50 mx-auto">
+                        <input formControlName="email" type="email" class="form-control " id="email"
+                            placeholder="Email-Address" required>
+                        <!-- Errors -->
+                        <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched">
+                            <p class="alert alert-danger mt-3 rounded rounded-3 font-color bg-third border-dark-subtle"
+                                *ngIf="loginForm.get('email')?.getError('required')">
+                                Email Is Required
+                            </p>
+                            <p class="alert alert-danger mt-3 rounded rounded-3 font-color bg-third border-dark-subtle"
+                                *ngIf="loginForm.get('email')?.getError('email')">
+                                Email Invalid
+                            </p>
+
+                        </div>
+                    </div>
+                    <!-- password -->
+                    <div class="form-group w-50 mx-auto">
+                        <input formControlName="password" type="password" class="form-control" id="password"
+                            placeholder="Password" required>
+                        <!-- Errors -->
+                        <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched">
+                            <p class="alert alert-danger mt-3 rounded rounded-3 font-color bg-third border-dark-subtle"
+                                *ngIf="loginForm.get('password')?.getError('required')">
+                                Password Is Required
+                            </p>
+                            <p class="alert alert-danger mt-3 rounded rounded-3 font-color bg-third border-dark-subtle"
+                                *ngIf="loginForm.get('password')?.getError('pattern')">
+                                Password Must Start With UpperCase then From 6 to 10
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-1 text-center d-flex flex-column align-items-center ">
+                        <a class="font-color" routerLink="/forgetpassword" >Forget Your Password ?</a>
+                        <button [disabled]="loginForm.invalid" class="btn-main rounded rounded-5 w-25">
+                            <i class="fas fa-spinner fa-spin fa-1 " *ngIf="isLoading"></i>
+                            Login</button>
+                        <p *ngIf="msgError"
+                            class="alert alert-danger mt-3 p-2 rounded rounded-3 font-color bg-third border-dark-subtle">
+                            {{msgError}} </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </form>
+    </div>
+</section>

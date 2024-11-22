@@ -1,0 +1,42 @@
+.form-floating {
+    margin: 7px 7px 0 0 !important;
+    background-color: var(--third-color) !important;
+}
+
+.form-control {
+    background-color: var(--third-color) !important;
+    border: 1px solid var(--font-color) !important;
+}
+
+.label {
+    background-color: var(--third-color) !important;
+}
+
+.social-list a {
+    border: 1px solid var(--font-color);
+    padding: 8px;
+    color: var(--font-color) !important;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    margin-left: 7px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.social-list a:hover {
+    background-color: var(--main-color);
+    color: white !important;
+    /* border: 1px solid white; */
+}
+@media (max-width: 992px){
+    .footer{
+        text-align: center;
+    }
+}

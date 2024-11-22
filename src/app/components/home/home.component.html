@@ -1,0 +1,324 @@
+<section class="landing-page">
+    <div class="home d-flex justify-content-center align-items-center position-relative">
+        <div class="overlay"></div>
+        <div class="decoration-pattern position-absolute">
+            <img src=" ./assets/Gallary/decoration pattern.png" alt="" class="w-100">
+        </div>
+        <!-- carousel -->
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <!-- left -->
+                        <div class="col-md-6 pt-4 pb-4">
+                            <div class="text-center">
+                                <h2 class="title1 pb-2 text-uppercase">Best SYRIAN SWEETS</h2>
+                                <div class="title2 row pb-4 d-flex align-items-center">
+                                    <div class="col-md-8">
+                                        <h2 class="title3 text-uppercase">AL joud <br> SWEETS</h2>
+                                    </div>
+                                    <div class="logo-2 col-md-4">
+                                        <img class="w-100" src=" ./assets/Gallary/home-logo.png" alt="logo">
+                                    </div>
+                                </div>
+                                <a routerLink="../product" class="mybtn btn rounded rounded-5">Shop Now</a>
+                            </div>
+                        </div>
+                        <!-- right -->
+                        <div class="offset-lg-1 col-md-5 text-center">
+                            <div class="image mx-auto">
+                                <img class="w-100" src="./assets/Gallary/home1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <!-- left -->
+                        <div class="col-md-6 pt-4 pb-4">
+                            <div class="text-center">
+                                <h2 class="title1 pb-2 text-uppercase">Best SYRIAN SWEETS</h2>
+                                <div class="title2 row pb-4 d-flex align-items-center">
+                                    <div class="col-md-8">
+                                        <h2 class="title3 text-uppercase">AL joud <br> SWEETS</h2>
+                                    </div>
+                                    <div class="logo-2 col-md-4">
+                                        <img class="w-100" src="./assets/Gallary/home-logo.png" alt="logo">
+                                    </div>
+                                </div>
+                                <a routerLink="../product" class="mybtn btn rounded rounded-5">Shop Now</a>
+                            </div>
+                        </div>
+                        <!-- right -->
+                        <div class="offset-lg-1 col-md-5">
+                            <div class="image">
+                                <img class="" src="./assets/Gallary/home2.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <!-- left -->
+                        <div class="col-md-6 pt-4 pb-4">
+                            <div class="text-center">
+                                <h2 class="title1 pb-2 text-uppercase">Best SYRIAN SWEETS</h2>
+                                <div class="title2 row pb-4 d-flex align-items-center">
+                                    <div class="col-md-8">
+                                        <h2 class="title3 text-uppercase">AL joud <br> SWEETS</h2>
+                                    </div>
+                                    <div class="logo-2 col-md-4">
+                                        <img class="w-100" src=" ./assets/Gallary/home-logo.png" alt="logo">
+                                    </div>
+                                </div>
+                                <a routerLink="../product" class="mybtn btn rounded rounded-5">Shop Now</a>
+                            </div>
+                        </div>
+                        <!-- right -->
+                        <div class="offset-lg-1 col-md-5">
+                            <div class="image">
+                                <img class="" src=" ./assets/Gallary/home3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+<!-- best sellers -->
+<section class="best-sellers pt-5 pb-5 text-center">
+    <div class="container">
+        <div class="title mt-1 position-relative">
+            <img class="img-title" src=" ./assets/Gallary/frame1.png" alt="">
+            <h2 class="text-uppercase position-absolute">Best Sellers</h2>
+        </div>
+        <div class="row pt-4 px-5">
+            <div class="col-md-3 col-sm-6" *ngFor="let product of products.slice(0, 9) ">
+                <!-- product -->
+                <div class="box-content">
+                    <div [routerLink]="['/details' , product.id]">
+                        <div class="box-img">
+                            <div class="inner-image">
+                                <img [src]="product.images[0]" [alt]="product.name">
+                            </div>
+                        </div>
+                        <div class="box-info text-center pt-2 pb-2">
+                            <h2> {{product.name}} </h2>
+                            <h3> {{product.base_price | currency:'EUR' }} </h3>
+                            <!-- <a routerLink="../category">lorem</a> -->
+                        </div>
+                    </div>
+                    <div class="addcart d-flex justify-content-center align-items-center flex-column">
+                        <i class="fa-regular fa-square-plus fw-bold pb-4"  (click)="addProduct(product.id)" ></i>
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Shop now -->
+<section class="shop-now pt-4 pb-4 bg-primary">
+    <div class="title text-center mt-1 position-relative">
+        <img class="img-title" src=" ./assets/Gallary/frame2.png" alt="">
+        <h2 class="text-uppercase position-absolute">try our mixed <br> baklava big box</h2>
+    </div>
+    <div class="shop-cont container pt-5 text-center">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="shop-img">
+                    <img class="w-100" src=" ./assets/Gallary/Mixed_baklava.png" alt="">
+                </div>
+            </div>
+            <div class=" col-md-6">
+                <div class="shop-info text-center">
+                    <h2 class="text-uppercase text-decoration-underline h3">Discover our Mixed Baklava Big Box</h2>
+                    <p class="pt-3 pb-3 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere
+                        massa id massa dictum, ut
+                        faucibus dolor semper. Sed sed sapien id arcu malesuada feugiat.</p>
+                    <div class="btn-new position-relative">
+                        <img src=" ./assets/Gallary/button2.png" alt="">
+                        <a class="position-absolute text-uppercase">Shop Now</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- gift card -->
+<div class="gift-card py-3 bg-third">
+    <div class="title text-center mt-1 position-relative">
+        <img class="img-title" src=" ./assets/Gallary/frame4.png" alt="">
+        <h2 class="text-uppercase position-absolute">Gift Card</h2>
+    </div>
+    <div class="gift-card-cont row d-flex justify-content-center align-items-center">
+        <div class="col-md-4">
+            <div class="gift-card-img d-flex justify-content-center align-items-center">
+                <img class="img" src=" ./assets/Gallary/giftcard.png" alt="">
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <p class="text-uppercase pb-4 font-color">Share it with loved ones</p>
+            <div class="btn-new position-relative">
+                <img src=" ./assets/Gallary/button1.png" alt="">
+                <a class="position-absolute text-uppercase">Gift cart</a>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
+<!-- carousel -->
+<section class="carousel-section my-3" id="carousel-section">
+    <div class="title text-center mt-1 position-relative">
+        <img class="img-title" src=" ./assets/Gallary/frame1.png" alt="">
+        <h2 class="text-uppercase position-absolute">Taste of tradition Wrapped In Sweetness</h2>
+    </div>
+    <div class="owl-cont my-4">
+        <owl-carousel-o [options]="customOptions">
+            <ng-template carouselSlide>
+                <img width="300px" height="320px" src=" ./assets/Gallary/Rectangle 1.png" alt="Slide 1">
+            </ng-template>
+            <ng-template carouselSlide>
+                <img width="300px" height="320px" src=" ./assets/Gallary/Rectangle 2.png" alt="Slide 2">
+            </ng-template>
+            <ng-template carouselSlide>
+                <img width="300px" height="320px" src=" ./assets/Gallary/Rectangle 3.png" alt="Slide 3">
+            </ng-template>
+            <ng-template carouselSlide>
+                <img width="300px" height="320px" src=" ./assets/Gallary/Rectangle 4.png" alt="Slide 4">
+            </ng-template>
+        </owl-carousel-o>
+
+    </div>
+</section>
+<!-- choose your sweets -->
+<section class="choose-sweets p-4 text-center">
+    <div class="title text-center mt-1 position-relative">
+        <img class="img-title" src="./assets/Gallary/frame1.png" alt="">
+        <h2 class="text-uppercase position-absolute">choose your sweets</h2>
+    </div>
+    <div class="choose-sweets-cont container">
+        <div class="row g-2 m-auto">
+            <div class="col-md-3 mx-auto " *ngFor="let category of categories | slice : 0 : 3 ">
+                <a routerLink="/category">
+                    <div class="choose-sweets-img d-flex justify-content-center align-items-center">
+                        <img class=" img2" [src]="category.image" [alt]="category.name">
+                        <!-- <img class="" src=" ./assets/Gallary/frame5.png" alt=""> -->
+                    </div>
+                    <div class="info text-main py-3">
+                        <h3 class="text-uppercase text-decoration-underline"> {{category.name}} </h3>
+                    </div>
+                </a>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<!-- pistachio-section -->
+<section class="pistachio-section ">
+    <div class="title text-center mt-1 position-relative">
+        <img class="img-title" src=" ./assets/Gallary/frame2.png" alt="">
+        <h2 class="text-uppercase position-absolute">QUALITY PISTACHIO FROM <br> THE BEST PISTACHIO FARMS</h2>
+    </div>
+    <div class="pistachio-section-cont">
+        <div class="container py-3">
+            <div class="row">
+                <!-- upper-left -->
+                <div class="col-md-8">
+                    <div class="left-cont text-center position-relative">
+                        <img class="w-75" src=" ./assets/Gallary/upper-frame.png" alt="upper-frame">
+                        <img class="w-100" src=" ./assets/Gallary/Property 1=Default.png" alt="pistachio">
+                        <div class="wow-image">
+                            <img class="w-100" src=" ./assets/Gallary/wow-image.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!-- lower-right -->
+                <div class="col-md-4">
+                    <div class="right-cont">
+                        <img src=" ./assets/Gallary/home-logo.png" alt="logo">
+                    </div>
+                </div>
+            </div>
+            <div class="row py-3">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <h2 class="fw-bold text-uppercase text-main">our pistachio</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-2">
+                <div class="offset-lg-1 col-md-8">
+
+                    <div class="left-cont text-center">
+                        <img class="w-100" src=" ./assets/Gallary/Property 1=Default.png" alt="pistachio">
+                        <img class="w-75" src=" ./assets/Gallary/lower-frame.png" alt="lower-frame">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Fixed img -->
+<section class="fixed-img">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src=" ./assets/Gallary/Property 1=Defaultbb.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src=" ./assets/Gallary/Property 1=Variant2nn.png" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button> -->
+    </div>
+</section>
+<!-- About  -->
+<section class="about py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="img">
+                    <img src=" ./assets/Gallary//home-logo.png" alt="home-logo">
+                </div>
+            </div>
+            <div class="col-md-7 text-center">
+                <div class="about-cont ">
+                    <h2 class="text-uppercase text-main">TRADITIONAL LUXURY MEETS MODERN
+                        PLEASURE</h2>
+                    <p>Our master confectioner learned his trade in one of the most important production facilities
+                        in Syria;</p>
+                    <p>Knowledge gathered from the great baklava masters Damascus.</p>
+                    <p>In Berlin we’re going one step further:A fusion of traditional luxury and modern enjoyment is
+                        the goal of <span class="text-main">AL JOUD</span>.. Discover the best baklava flavor made from
+                        ingredients that our grandparents already knew.
+                        ​</p>
+                    <p>We deliberately do not use any artificial additives in our production.</p>
+                    <p>There is only what belongs in it and that is of the highest quality!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,74 @@
+<section class="pt-100">
+  <div class="cat-title bg-third2 py-2">
+    <div class="container-fluid rounded rounded-2 py-2">
+      <h2 class="h5">Home / Baklava</h2>
+    </div>
+  </div>
+  <div class="main-container container">
+    <!-- Product Grid -->
+    <section class="product-grid">
+      <!-- Cart -->
+      <div class="product-card" *ngFor="let product of products">
+        <div class="img-cont position-relative">
+          <img class="img" [src]="product.images.slice(0,1)" [alt]="product.name" />
+          <div
+            class="cont position-absolute rounded rounded-2 cursor-pointer px-1"
+          >
+            Straight to Your Door
+          </div>
+          <div class="btn text-uppercase rounded rounded-5">
+            add <br />
+            <span class="text-muted">to cart</span>
+          </div>
+        </div>
+        <h4 class="text-black mt-2">{{ product.name }}</h4>
+        <!-- ERORRRRRRRR -->
+        <h4 class="text-muted h6">{{ product.categoryprod }}</h4> 
+        <p>{{product.base_price | currency:'EUR'}} - {{product.base_price | currency:'EUR'}}</p>
+      </div>
+
+      <!-- Add more product cards here -->
+    </section>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <input
+        class="search form-control"
+        type="search"
+        placeholder="Search..."
+      />
+      <h3 class="h4 pt-3">Categories</h3>
+      <ul class="px-2">
+        <li>
+          <input type="checkbox" id="myCheck" onclick="myFunction()" />
+          Pistachio Baklava
+        </li>
+        <li>
+          <input type="checkbox" id="myCheck" onclick="myFunction()" /> Walnut
+          Baklava
+        </li>
+      </ul>
+      <h3>Price</h3>
+      <input class="form-range" type="range" min="0" max="500" />
+      <h3 class="h4 my-3">Popular Products</h3>
+      <ul class="px-2 ">
+        <li class="d-flex align-items-center " *ngFor="let product of products">
+          <img
+            class="w-25 m-1 rounded"
+            [src]="product.images[0]"
+            [alt]="product.name"
+          />
+          <p class="text-muted h6">{{product.description}}</p>
+        </li>
+        
+      </ul>
+      <div class="social-list text-center my-4">
+        <div class="info h4">follow us</div>
+        <a class="m-1"><i class="fab fa-twitter fa-fw"></i></a>
+        <a class="m-1"><i class="fab fa-facebook-f fa-fw"></i></a>
+        <a class="m-1"><i class="fab fa-instagram fa-fw"></i></a>
+        <a class="m-1"><i class="fab fa-dribbble fa-fw"></i></a>
+        <a class="m-1"><i class="fab fa-pinterest fa-fw"></i></a>
+      </div>
+    </aside>
+  </div>
+</section>

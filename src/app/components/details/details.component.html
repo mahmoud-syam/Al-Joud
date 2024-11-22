@@ -1,0 +1,126 @@
+<section class="product-page pt-100 container">
+    <h5 class="font-color text-decoration-underline">Home\Asssortment sweets\Mabroumeh</h5>
+    <div class="row py-4 ">
+        <div class="col-md-6 text-center mx-auto">
+            <div class="product-img ">
+                <img class="w-50" [src]="productDetails.images.slice(0, 1)" [alt]="productDetails.name">
+            </div>
+
+            <div class="w-25 text-center mx-auto pt-2">
+                <owl-carousel-o [options]="productSlider">
+
+                    <ng-container *ngFor="let product of productDetails.images">
+                        <ng-template carouselSlide>
+                            <img class="w-100 px-2 rounded rounded-2" [src]="product" [alt]="productDetails.name"
+                                [title]="productDetails.name">
+                        </ng-template>
+                    </ng-container>
+
+                </owl-carousel-o>
+            </div>
+
+
+        </div>
+        <div class="col-md-6">
+            <h2 class="main-font font-color h1 fw-bolder">{{productDetails.name.split("").slice(0.2).join("")}} </h2>
+            <span class="h4 font-color"> {{productDetails.base_price | currency:'EUR' }} </span>
+            <p class="font-color text-black py-3 w-75">{{productDetails.description}} </p>
+
+            <div class="add-wishlist my-2 cursor-pointer font-color fw-bold">
+                <i class="fa-regular fa-heart fa-beat"></i>
+                <span class="ml-2">Add to Wishlist</span>
+            </div>
+            <div class="product-size my-4">
+                <h3 class="font-color h4 fw-bold">
+                    Size
+                </h3>
+                <select class="custom-dropdown ">
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                </select>
+            </div>
+            <form class="">
+                <h3 class="font-color h4 fw-bold">
+                    Quantity
+                </h3>
+                <input type="number" class="form-control w-50" placeholder="0">
+            </form>
+            <div class="my-4 w-100">
+                <button class="btn-main btn-primary w-75 text-uppercase fw-bold">Add to Cart</button>
+            </div>
+            <div class="my-4 w-100">
+                <button class="btn-main btn2 btn-primary w-75 text-uppercase fw-bold">buy now</button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <!-- Shopping -->
+    <div class="title mt-1 position-relative text-center">
+        <img class="img-title" src="./assets/Gallary/frame1.png" alt="">
+        <h2 class="text-uppercase position-absolute h3">continue shopping</h2>
+    </div>
+    <div class="row px-5 pb-5">
+        <!-- Product Item -->
+        <div class="col-md-3 col-sm-6 col-6">
+            <div class="product-item">
+                <img class="img" src="./assets/Gallary/product.png" alt="Product Image">
+                <div class="product-details">
+                    <span class="h4">17.00 $</span>
+                    <h3 class="h5 text-muted">Osh Al Bulbul With </h3>
+                    <h3 class="h5 text-muted">Pistachio </h3>
+                </div>
+                <div
+                    class="addcart my-2 w-100 text-uppercase cursor-pointer font-color border border-1 rounded text-center">
+                    + add
+                </div>
+            </div>
+        </div>
+        <!-- Product Item -->
+        <div class="col-md-3 col-sm-6 col-6">
+            <div class="product-item">
+                <img class="img" src="./assets/Gallary/product.png" alt="Product Image">
+                <div class="product-details">
+                    <span class="h4">17.00 $</span>
+                    <h3 class="h5 text-muted">Osh Al Bulbul With </h3>
+                    <h3 class="h5 text-muted">Pistachio </h3>
+                </div>
+                <div
+                    class="addcart my-2 w-100 text-uppercase cursor-pointer font-color border border-1 rounded text-center">
+                    + add
+                </div>
+            </div>
+        </div>
+        <!-- Product Item -->
+        <div class="col-md-3 col-sm-6 col-6">
+            <div class="product-item">
+                <img class="img" src="./assets/Gallary/product.png" alt="Product Image">
+                <div class="product-details">
+                    <span class="h4">17.00 $</span>
+                    <h3 class="h5 text-muted">Osh Al Bulbul With </h3>
+                    <h3 class="h5 text-muted">Pistachio </h3>
+                </div>
+                <div
+                    class="addcart my-2 w-100 text-uppercase cursor-pointer font-color border border-1 rounded text-center">
+                    + add
+                </div>
+            </div>
+        </div>
+        <!-- Product Item -->
+        <div class="col-md-3 col-sm-6 col-6">
+            <div class="product-item">
+                <img class="img" src="./assets/Gallary/product.png" alt="Product Image">
+                <div class="product-details">
+                    <span class="h4">17.00 $</span>
+                    <h3 class="h5 text-muted">Osh Al Bulbul With </h3>
+                    <h3 class="h5 text-muted">Pistachio </h3>
+                </div>
+                <div
+                    class="addcart my-2 w-100 text-uppercase cursor-pointer font-color border border-1 rounded text-center">
+                    + add
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

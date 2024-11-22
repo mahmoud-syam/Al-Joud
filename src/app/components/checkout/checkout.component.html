@@ -1,0 +1,89 @@
+<section class="checkout pt-100">
+    <div class="container">
+        <div class="checkout-title">
+            <h2 class="text-uppercase font-color fw-bold">checkout</h2>
+        </div>
+        <hr>
+        <div class="checkout-cont">
+            <div class="font-color h3 py-3">
+                Shipping Information
+            </div>
+            <form class="form-control border-0 p-0">
+                <div class="row">
+                    <div class="form-group col-md-5">
+                        <input type="text" class="form-control " id="name" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input type="text" class="form-control" id="last-name" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="row py-3">
+                    <div class="form-group col-md-5">
+                        <input type="text" class="form-control" id="city" placeholder="City">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input type="address" class="form-control" id="address" placeholder="Address">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-5">
+                        <input type="email" class="form-control" id="email" placeholder="Email-Adress">
+                    </div>
+                    <div class="form-group col-md-5">
+                        <input type="tel" class="form-control" id="tel" placeholder="Phone Number">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <hr>
+        <div class="payment-method">
+            <div class="row">
+                <div class="col-md-5 my-3">
+                    <div class="font-color h3">
+                        Payment Method
+                    </div>
+                    <div class="form-check d-flex align-items-center my-2">
+                        <input class="form-check-input" type="radio" name="payment-method" id="credit-card"
+                            value="credit-card">
+                        <label class="form-check-label" for="credit-card">
+                            <img class="w-50" src="./assets/Gallary/pay.png" alt="pay">
+                        </label>
+                    </div>
+                    <div class="form-check d-flex align-items-center">
+                        <input class="form-check-input" type="radio" name="payment-method" id="credit-card"
+                            value="credit-card">
+                        <label class="form-check-label" for="credit-card">
+                            <img class="w-50" src="./assets/Gallary/paypal.png" alt="paypal">
+                        </label>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="form-control border-0 p-0">
+                        <div class="form-group ">
+                            <input type="text" class="form-control " id="cardname" placeholder="CardHolder's Name"
+                                required>
+                        </div>
+                        <div class="form-group ">
+                            <input type="number" class="form-control " id="cardnumber" placeholder="Card Number"
+                                required>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="form-group ">
+                                <input type="date" class="form-control " id="expiredate" placeholder="Expiry Date"
+                                    required>
+                            </div>
+                            <div class="form-group ">
+                                <input type="number" class="form-control " id="cvv" placeholder="CVV" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-4 text-center d-flex flex-column align-items-center ">
+            <button class="btn-main rounded rounded-5 px-lg-5 py-1 w-25">Place Order</button>
+            <button class="btn-main btn-shop rounded rounded-5 px-lg-5 py-1 w-25 mt-2">Continue shopping</button>
+        </div>
+
+    </div>
+</section>

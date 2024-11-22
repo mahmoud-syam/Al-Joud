@@ -1,0 +1,406 @@
+/* Start Home */
+.home {
+    min-height: 100vh;
+    background-color: #1f2021;
+    background-image: url("../../../assets/Hero-section.jpg");
+    background-size: 100% 100%;
+    background-position: center center;
+    position: relative;
+}
+
+.home .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 10%);
+}
+.decoration-pattern{
+    right: 0;
+    top: 50%;
+    transform: translateY(-75%);
+    width: 45%;
+    height: 45%;
+    -webkit-transform: translateY(-75%);
+    -moz-transform: translateY(-75%);
+    -ms-transform: translateY(-75%);
+    -o-transform: translateY(-75%);
+}
+.home .text {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50%;
+    padding: 50px;
+    background-color: var(--transparent-color);
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.home .text .content {
+    max-width: 500px;
+}
+.title1 {
+    font-size: 45px !important;
+    color: var(--font-color);
+    line-height: 22px;
+    letter-spacing: 2;
+}
+
+.title2 {
+    color: var(--font-color);
+}
+
+.title3 {
+    font-size: 45px !important;
+}
+.mybtn {
+    background: rgba(215, 199, 136,0.2);
+    background-image: -webkit-linear-gradient(top, rgba(215, 199, 136,0.2), rgba(215, 199, 136,0.4));
+    background-image: -moz-linear-gradient(top, rgba(215, 199, 136,0.2), rgba(215, 199, 136,0.4));
+    background-image: -ms-linear-gradient(top, rgba(215, 199, 136,0.2), rgba(215, 199, 136,0.4));
+    background-image: -o-linear-gradient(top, rgba(215, 199, 136,0.2), rgba(215, 199, 136,0.4));
+    background-image: linear-gradient(to bottom, rgba(215, 199, 136,0.2), rgba(215, 199, 136,0.4));
+    -webkit-border-radius: 37;
+    -moz-border-radius: 37;
+    border-radius: 37px;
+    text-shadow: 1px 1px 3px #666666;
+    -webkit-box-shadow: 0px 1px 3px #666666;
+    -moz-box-shadow: 0px 1px 3px #666666;
+    box-shadow: 0px 1px 3px #666666;
+    font-family: var(--font-family);
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 40px ;
+    border: solid rgba(215, 199, 136,0.9) 1px;
+    text-decoration: none;
+}
+
+.mybtn:hover {
+    background: #795227;
+    background-image: -webkit-linear-gradient(top, #795227, #795227);
+    background-image: -moz-linear-gradient(top, #795227, #795227);
+    background-image: -ms-linear-gradient(top, #795227, #795227);
+    background-image: -o-linear-gradient(top, #795227, #795227);
+    background-image: linear-gradient(to bottom, #795227, #795227);
+    text-decoration: none;
+}
+ .image{
+    width: 80%;
+}
+
+/* best-sellers */
+.about,
+.pistachio-section,
+.best-sellers{
+    /* background-color: #fff !important; */
+    color: var(--font-color);
+    background-image: url("../../../assets/Gallary/background.png");
+    background-size: 100% 100%;
+    background-position: center ;
+    background-repeat: no-repeat;
+    position: relative;
+
+
+}
+.carousel-section .title h2,
+.pistachio-section .title h2 ,
+.choose-sweets .title h2,
+.gift-card .title h2,
+.shop-now .title h2,
+.best-sellers .title h2{
+    top: 35px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    color: var(--font-color);
+    font-weight: 700 !important;
+}
+.pistachio-section .img-title,
+.gift-card .img-title,
+.shop-now .img-title,
+.best-sellers .img-title{
+    width: 350px !important;
+    
+}
+.best-sellers img,
+.box-content{
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+.box-content .box-img .inner-image{
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    overflow: hidden;
+
+}
+.box-content .box-img .inner-image img:hover{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+.addcart{
+    position: absolute;
+    background-color: #ffffff4d;
+    width: 70px;
+    height: 120px;
+    top: 10px;
+    right: -80px;
+    border-radius: 5px;
+    transition: all 1.2s ease-in;
+}
+.best-sellers .box-content:hover .addcart{
+    top: 10px;
+    right: 5px;
+}
+.best-sellers .addcart i {
+    font-size: 30px;
+    cursor: pointer;
+}
+/* Shop now */
+.shop-now{
+    min-height: 80vh;
+    background-color: #1f2021;
+    background-image: url("../../../assets/Gallary/Section1.png");
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #EDD186 !important;
+    
+}
+.shop-now .title h2{
+    top: 70px !important;
+    color: #EDD186 !important;
+}
+.shop-now .shop-info p{
+    width: 500px;
+    font-size: 28px;
+    color: #fff !important;
+}
+.shop-now .shop-img img{
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+.shop-now .shop-img img:hover{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+
+}
+.gift-card-cont .btn-new a,
+.shop-now .btn-new a{
+    top: 28px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    color: var(--font-color);
+}
+.gift-card-cont .btn-new img,
+.shop-now .btn-new img{
+    width: 200px !important;
+}
+.gift-card-cont .btn-new a,
+.shop-now .btn-new a{
+    font-size: 22px;
+    font-weight: 700;
+}
+.shop-now{
+    font-size: 22px;
+}
+.shop-now .btn-new img:hover a{
+    color: #fff !important;
+}
+
+/* Gift Card */
+.gift-card .title h2{
+    top: 85px !important;
+    color: #1f2021 !important;
+}
+.gift-card .gift-card-img {
+    color: var(--font-color);
+    background-image: url("../../../assets/Gallary/frame3.png");
+    background-size: 100% 100%;
+    background-position: center ;
+    background-repeat: no-repeat;
+    position: relative;
+    /* width: 350px !important; */
+    height: 300px;
+}
+.gift-card .gift-card-img img{
+    width: 60% !important;
+}
+.gift-card .gift-card-cont p{
+    font-size: 35px;
+    font-weight: 700;
+}
+/* carousel-section */
+.carousel-section .img-title{
+    width: 500px !important;
+}
+.carousel-section .title h2{
+    font-size: 16px !important;
+    top: 53px;
+    font-weight: 900 !important;
+}
+.carousel-section .owl-cont{
+    padding: 10px 0;
+}
+.carousel-section .owl-carousel.owl-drag .owl-item {
+    padding: 0 17px !important;
+}
+
+
+
+
+
+
+/* Choose sweets */
+.choose-sweets .img-title{
+    width: 500px !important;
+}
+.choose-sweets .title h2{
+    top: 53px !important;
+    font-size: 25px;
+}
+/* :first-child */
+.image-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+.choose-sweets .choose-sweets-img img{
+    width: 100% !important;
+}
+.choose-sweets .choose-sweets-img .img2{
+    width: 75% !important;
+    z-index: -1;
+}
+
+/* pistachio-section */
+.pistachio-section .title h2 {
+    top: 66px !important;
+    font-size: 21px;
+}
+.pistachio-section .pistachio-section-cont .container{
+    padding: 0 80px;
+}
+.pistachio-section .pistachio-section-cont .wow-image{
+    width: 100px !important;
+    position: absolute;
+    bottom: -150px;
+    left: 38px;
+    z-index: 9999;
+}
+/* About */
+.about .about-cont h2{
+    font-size: 26px !important;
+    font-weight: 800;
+}
+.about .about-cont p {
+    font-size: 25px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1.1;
+    padding: 15px 0 !important;
+    color: #1f2021;
+}
+
+
+@media (max-width: 992px){
+    .carousel-inner{
+        margin-top: 70px !important;
+    }
+    .landing-page .image{
+        width: 60% !important;
+    }
+    .decoration-pattern{
+        display: none !important;
+    }
+    .landing-page .title1{
+        line-height: normal;
+    }
+    .title1{
+        font-size: 28px !important;
+    }
+    .title3{
+        font-size: 28px !important;
+    }
+    .logo-2{
+        width: 70% !important;
+        margin: auto !important;
+    }
+    .landing-page .image{
+        display: none;
+    }
+    .best-sellers{
+        background-image: none;
+    }
+    .shop-info p {
+        width: 310px !important;
+        font-size: 20px !important;
+    }
+    .shop-info h2 {
+        font-size: 21px !important;
+    }
+    .gift-card-cont p {
+        font-size: 28px !important;
+    }
+    .carousel-section .img-title{
+        width: 340px !important;
+    }
+    .carousel-section .title h2 {
+        top: 37px !important;
+        font-size: 15px !important;
+    }
+    .choose-sweets .img-title{
+        width: 340px !important;
+    }
+    .choose-sweets .title h2{
+        top: 36px !important;
+        font-size: 17px;
+    }
+    .pistachio-section h2 {
+        top: 75px !important;
+        font-size: 16px !important;
+    }
+    .wow-image img{
+        width: 50% !important;
+    }
+    .wow-image {
+    bottom: -68px !important;
+    left: -21px !important;
+    }
+    .right-cont img {
+        width: 75%;
+    }
+   
+}
+     
