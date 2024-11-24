@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -21,12 +20,22 @@ import { ProductComponent } from './components/product/product.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 // To allow api access 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthLayoutComponent } from './components/auth-layout/auth-layout.component';
 import { BlankLayoutComponent } from './components/blank-layout/blank-layout.component';
 import { NavAuthComponent } from './components/nav-auth/nav-auth.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ForgepasswordComponent } from './components/forgepassword/forgepassword.component';
+import { ToastrModule } from 'ngx-toastr';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+// tranlslation
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+
+
+// tranlslation
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -59,7 +68,16 @@ import { ForgepasswordComponent } from './components/forgepassword/forgepassword
     CarouselModule,
     RouterModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    // tranlslation
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
 
   ],
   providers: [],

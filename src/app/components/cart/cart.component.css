@@ -1,0 +1,8 @@
+.cart-page{
+    font-family: var(--font-family) !important;
+    background-image: url("../../../assets/Gallary/background.png");
+    background-size: 100% 100%;
+    background-position: center ;
+    background-repeat: no-repeat;
+    position: relative;
+}

@@ -9,7 +9,7 @@ export class CartService {
   constructor(private _HttpClient: HttpClient) {}
   baseUrl: string = 'https://lightgray-duck-186253.hostingersite.com/api/';
   myToken: any = {
-    token: localStorage.getItem('token'),
+    token: localStorage.getItem('etoken'),
   };
   // addToCart(prodId: string): Observable<any> {
 
@@ -34,30 +34,48 @@ export class CartService {
   //     { headers }
   //   );
   // }
-  
+
   addToCart(prodId: string): Observable<any> {
     const token = localStorage.getItem('token');
-  
+
     if (!token) {
       throw new Error('Authentication token is missing');
     }
-  
-    return this._HttpClient.post(
-      `https://lightgray-duck-186253.hostingersite.com/api/cart/add`,
-      {
-        product_id: prodId,
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
+
+    return this._HttpClient
+      .post(
+        `https://lightgray-duck-186253.hostingersite.com/api/cart/add`,
+        {
+          product_id: prodId,
         },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          console.error('An error occurred:', error);
+          return throwError(
+            () =>
+              new Error(
+                'Failed to add product to cart. Please try again later.'
+              )
+          );
+        })
+      );
+  }
+
+  // get cart
+  getCartUser(): Observable<any> {
+    return this._HttpClient.get(
+      `https://lightgray-duck-186253.hostingersite.com/api/cart`,
+      {
+        headers: this.myToken,
+        //  {Authorization: 'Bearer' + localStorage.getItem('token'),}
+        // {token:JSON.stringify(localStorage.getItem('etoken'))}
       }
-    ).pipe(
-      catchError((error: HttpErrorResponse) => {
-        console.error('An error occurred:', error);
-        return throwError(() => new Error('Failed to add product to cart. Please try again later.'));
-      })
     );
   }
-  
 }

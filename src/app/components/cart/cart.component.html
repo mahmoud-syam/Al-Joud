@@ -1,1 +1,55 @@
-<p>cart works!</p>
+<section class="cart-page pt-100 min-vh-100" *ngIf="cartDetails;else msg">
+  <div class="container">
+    <div class="cart-title">
+      <h2 class="text-uppercase font-color fw-bold">Shopping Cart</h2>
+    </div>
+    <hr />
+    <div class="cart-cont">
+      <div class="font-color h3 py-3">
+        Total Price : {{ cartDetails.cart.price | currency : "EUR " }}
+      </div>
+      <div class="row border-bottom py-2" *ngFor="let item of cartDetails.cart">
+        <div class="col-md-1">
+          <img class="w-100" [src]="item.image" [alt]="item.name" />
+        </div>
+        <div class="col-md-11 d-flex justify-content-between align-items-center">
+          <div>
+            <h3 class="h6">{{ item.cart.name }}</h3>
+            <p class="text-main small m-0">
+              Price : {{ item.cart.price | currency : "EUR " }}
+            </p>
+            <button class="btn btn-main m0 p0 text-main">
+              <i class="fas fa-trash-can"></i> Remove
+            </button>
+          </div>
+          <div>
+            <button class="btn btn-sm border-success"> - </button>
+            <span> {{ item.cart.quantity }} </span>
+            <button class="btn btn-sm border-success"> + </button>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="cart-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div> -->
+    </div>
+  </div>
+</section>
+
+<ng-template #msg >
+  <h2 class="text-main pt-100 text-center"> Your Cart Is Empty... </h2>
+</ng-template>
+

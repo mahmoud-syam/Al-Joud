@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { ApidataService } from 'src/app/apidata.service';
 import { Category } from 'src/app/Shared/interfaces/category';
 import { Product } from 'src/app/Shared/interfaces/product';
 import { CartService } from 'src/app/Shared/services/cart.service';
+import { TranslationService } from 'src/app/Shared/services/translation.service';
 
 @Component({
   selector: 'app-home',
@@ -16,7 +19,9 @@ export class HomeComponent implements OnInit {
   // Handle Apidata
   constructor(
     private _ApidataService: ApidataService,
-    private _CartService: CartService
+    private _CartService: CartService,
+    private _ToastrService: ToastrService,
+    private _TranslationService: TranslationService
   ) {
     this._ApidataService.getProducts().subscribe((data) => {
       this.dataApi = data;
@@ -26,9 +31,17 @@ export class HomeComponent implements OnInit {
   // Global property
   products: Product[] = [];
   categories: Category[] = [];
+  // Language
+  currentLanguage: string = 'en';
 
   // Awl m afta7 hatsht3l
   ngOnInit(): void {
+    // Language
+    this._TranslationService.getLanguage().subscribe((lang) => {
+      this.currentLanguage = lang;
+    });
+
+    // Get Products
     this._ApidataService.getProducts().subscribe({
       next: (response) => {
         this.products = response.data;
@@ -55,9 +68,11 @@ export class HomeComponent implements OnInit {
     this._CartService.addToCart(id).subscribe({
       next: (response) => {
         console.log('Product added to cart:', response);
+        this._ToastrService.success('Product added to cart!');
       },
       error: (error) => {
         console.error('Error adding product to cart:', error);
+        this._ToastrService.error('Failed to add product to cart!');
       },
     });
   }
@@ -72,6 +87,8 @@ export class HomeComponent implements OnInit {
     navSpeed: 500,
     navText: ['Prv', 'Next'],
     autoplay: true,
+    autoplaySpeed: 1000,
+    autoplayTimeout: 2000,
     responsive: {
       0: {
         items: 1,

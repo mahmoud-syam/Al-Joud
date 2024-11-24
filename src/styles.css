@@ -13,14 +13,30 @@
     --font-family: "Cormorant", serif;
     --rating-color: #ffc908;
 }
-
+::-webkit-scrollbar{
+    width: 7px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--light-color);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color );
+}
 :host {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     justify-content: space-between;
 }
-
+[dir="ltr"] {
+    direction: ltr;
+    text-align: left;
+  }
+  
+  [dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+  }
 /* Utilities */
 a {
     color: #fff;
@@ -56,6 +72,8 @@ body {
     font-family: var(--font-family) !important;
     scroll-behavior: smooth;
     overflow-x: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .nav-link {
