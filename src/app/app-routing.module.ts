@@ -38,7 +38,7 @@ const routes: Routes = [
     path: '', component: AuthLayoutComponent, title: 'AlJoud | Home', children: [
       { path: 'login', component: LoginComponent, title: 'AlJoud | Login' },
       { path: 'register', component: RegisterComponent, title: 'AlJoud | register' },
-      { path: 'checkout', component: CheckoutComponent, title: 'AlJoud | Checkout' },
+      { path: 'checkout/:id', component: CheckoutComponent, title: 'AlJoud | Checkout' },
     ]
   },
 

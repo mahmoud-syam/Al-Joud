@@ -46,9 +46,20 @@ a:not(.dropdown-item){
 .dropdown-menu {
     background-color: var(--main-color);
 }
-/* .bg-nav{
-    background-color: #795227 !important;
-} */
+.bg-nav{
+    background-color: var(--third-color) !important;
+    color: #fff !important;
+}
+.color-nav{
+    color: #fff !important;
+}
+
+
+.profile{
+    padding: 7px !important;
+    color: #fff !important;
+    background-color: transparent !important;
+}
 @media (max-width: 768px){
     .navbar-brand{
         display: none !important;

@@ -11,6 +11,7 @@ import { Product } from 'src/app/Shared/interfaces/product';
 })
 export class DetailsComponent implements OnInit {
   constructor(private _ActivatedRoute: ActivatedRoute, private _ApidataService: ApidataService) { }
+  products: Product[] = [];
 
   // carousel options
   productSlider: OwlOptions = {
@@ -19,9 +20,11 @@ export class DetailsComponent implements OnInit {
     touchDrag: true,
     pullDrag: true,
     dots: false,
-    navSpeed: 500,
-    navText: ['', ''],
+    navSpeed: 300,
+    navText: ['Prv', 'Next'],
     autoplay: true,
+    autoplaySpeed: 1000,
+    autoplayTimeout: 2000,
     responsive: {
       0: {
         items: 2
@@ -60,7 +63,23 @@ export class DetailsComponent implements OnInit {
       error: (error) => {
         console.log(error);
       }
-    })
+    });
+
+
+     // Get Products
+     this._ApidataService.getProducts().subscribe({
+      next: (response) => {
+        this.products = response.data;
+        // console.log(response);
+      },
+      error: (error) => {
+        console.error('Error fetching data', error);
+      },
+    });
   }
+
+
+
+
 
 }

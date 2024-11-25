@@ -1,8 +1,8 @@
 <section class="landing-page">
-    <div class="home d-flex justify-content-center align-items-center position-relative">
+    <div class="home d-flex justify-content-between align-items-center position-relative">
         <div class="overlay"></div>
         <div class="decoration-pattern position-absolute">
-            <img src=" ./assets/Gallary/decoration pattern.png" alt="" class="w-100">
+            <img src=" ./assets/Gallary/decoration pattern.png" alt="decoration-pattern" class="w-100">
         </div>
         <!-- carousel -->
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -32,37 +32,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item">
+                <div class="carousel-item ">
                     <div class="row d-flex justify-content-center align-items-center">
                         <!-- left -->
                         <div class="col-md-6 pt-4 pb-4">
                             <div class="text-center">
-                                <h2 class="title1 pb-2 text-uppercase">{{'TITLE' | translate}}</h2>
-                                <div class="title2 row pb-4 d-flex align-items-center">
-                                    <div class="col-md-8">
-                                        <h2 class="title3 text-uppercase">AL joud <br> SWEETS</h2>
-                                    </div>
-                                    <div class="logo-2 col-md-4">
-                                        <img class="w-100" src="./assets/Gallary/home-logo.png" alt="logo">
-                                    </div>
-                                </div>
-                                <a routerLink="../product" class="mybtn btn rounded rounded-5">Shop Now</a>
-                            </div>
-                        </div>
-                        <!-- right -->
-                        <div class="offset-lg-1 col-md-5">
-                            <div class="image">
-                                <img class="" src="./assets/Gallary/home2.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row d-flex justify-content-center align-items-center">
-                        <!-- left -->
-                        <div class="col-md-6 pt-4 pb-4">
-                            <div class="text-center">
-                                <h2 class="title1 pb-2 text-uppercase">{{'TITLE' | translate}}</h2>
+                                <h2 class="title1 pb-2 text-uppercase"> {{'TITLE' | translate}} </h2>
                                 <div class="title2 row pb-4 d-flex align-items-center">
                                     <div class="col-md-8">
                                         <h2 class="title3 text-uppercase">AL joud <br> SWEETS</h2>
@@ -75,22 +50,48 @@
                             </div>
                         </div>
                         <!-- right -->
-                        <div class="offset-lg-1 col-md-5">
-                            <div class="image">
-                                <img class="" src=" ./assets/Gallary/home3.png" alt="">
+                        <div class="offset-lg-1 col-md-5 text-center">
+                            <div class="image mx-auto">
+                                <img class="w-100" src="./assets/Gallary/home1.png" alt="">
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="carousel-item ">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <!-- left -->
+                        <div class="col-md-6 pt-4 pb-4">
+                            <div class="text-center">
+                                <h2 class="title1 pb-2 text-uppercase"> {{'TITLE' | translate}} </h2>
+                                <div class="title2 row pb-4 d-flex align-items-center">
+                                    <div class="col-md-8">
+                                        <h2 class="title3 text-uppercase">AL joud <br> SWEETS</h2>
+                                    </div>
+                                    <div class="logo-2 col-md-4">
+                                        <img class="w-100" src=" ./assets/Gallary/home-logo.png" alt="logo">
+                                    </div>
+                                </div>
+                                <a routerLink="../product" class="mybtn btn rounded rounded-5">Shop Now</a>
+                            </div>
+                        </div>
+                        <!-- right -->
+                        <div class="offset-lg-1 col-md-5 text-center">
+                            <div class="image mx-auto">
+                                <img class="w-100" src="./assets/Gallary/home1.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
                 data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
                 <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
                 data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
@@ -159,7 +160,7 @@
     </div>
 </section>
 <!-- gift card -->
-<div class="gift-card py-3 bg-third">
+<div class="gift-card py-2 bg-third">
     <div class="title text-center mt-1 position-relative">
         <img class="img-title" src=" ./assets/Gallary/frame4.png" alt="">
         <h2 class="text-uppercase position-absolute">Gift Card</h2>
@@ -189,16 +190,16 @@
     <div class="owl-cont my-4">
         <owl-carousel-o [options]="customOptions">
             <ng-template carouselSlide>
-                <img width="300px" height="320px" src=" ./assets/Gallary/Rectangle 1.png" alt="Slide 1">
+                <img src=" ./assets/Gallary/Rectangle 1.png" alt="Slide 1">
             </ng-template>
             <ng-template carouselSlide>
-                <img width="300px" height="320px" src=" ./assets/Gallary/Rectangle 2.png" alt="Slide 2">
+                <img src=" ./assets/Gallary/Rectangle 2.png" alt="Slide 2">
             </ng-template>
             <ng-template carouselSlide>
-                <img width="300px" height="320px" src=" ./assets/Gallary/Rectangle 3.png" alt="Slide 3">
+                <img src=" ./assets/Gallary/Rectangle 3.png" alt="Slide 3">
             </ng-template>
             <ng-template carouselSlide>
-                <img width="300px" height="320px" src=" ./assets/Gallary/Rectangle 4.png" alt="Slide 4">
+                <img src=" ./assets/Gallary/Rectangle 4.png" alt="Slide 4">
             </ng-template>
         </owl-carousel-o>
 
@@ -211,7 +212,7 @@
         <h2 class="text-uppercase position-absolute">choose your sweets</h2>
     </div>
     <div class="choose-sweets-cont container">
-        <div class="row g-2 m-auto">
+        <div class="row g-1 m-auto">
             <div class="col-md-3 mx-auto " *ngFor="let category of categories | slice : 0 : 3 ">
                 <a routerLink="/category">
                     <div class="choose-sweets-img d-flex justify-content-center align-items-center">
@@ -285,14 +286,12 @@
                 <img src=" ./assets/Gallary/Property 1=Variant2nn.png" class="d-block w-100" alt="...">
             </div>
         </div>
-        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button> -->
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+        </button>
     </div>
 </section>
 <!-- About  -->

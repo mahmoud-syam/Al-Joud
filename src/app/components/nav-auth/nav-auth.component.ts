@@ -6,14 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-auth.component.css']
 })
 export class NavAuthComponent {
-  isscrolling = false;
-
+  isscrolling:boolean = true;
+  
   ngOnInit(): void {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 30) {
-
+    window.addEventListener('scroll', ()=>{
+      if(window.scrollY > 30){
         this.isscrolling = false;
-      } else {
+      }else{
         this.isscrolling = true;
       }
     })

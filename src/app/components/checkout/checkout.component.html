@@ -8,35 +8,35 @@
             <div class="font-color h3 py-3">
                 Shipping Information
             </div>
-            <form class="form-control border-0 p-0">
+            <form [formGroup]="orderForm" (ngSubmit)="handleForm()" class="form-control border-0 p-0">
                 <div class="row">
                     <div class="form-group col-md-5">
-                        <input type="text" class="form-control " id="name" placeholder="First Name" required>
+                        <input  formControlName="firstName" type="text" class="form-control " id="name" placeholder="First Name" required>
                     </div>
                     <div class="form-group col-md-5">
-                        <input type="text" class="form-control" id="last-name" placeholder="Last Name" required>
+                        <input formControlName="lastName" type="text" class="form-control" id="last-name" placeholder="Last Name" required>
                     </div>
                 </div>
                 <div class="row py-3">
                     <div class="form-group col-md-5">
-                        <input type="text" class="form-control" id="city" placeholder="City">
+                        <input formControlName="city" type="text" class="form-control" id="city" placeholder="City">
                     </div>
                     <div class="form-group col-md-5">
-                        <input type="address" class="form-control" id="address" placeholder="Address">
+                        <input formControlName="address" type="address" class="form-control" id="address" placeholder="Address">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-5">
-                        <input type="email" class="form-control" id="email" placeholder="Email-Adress">
+                        <input formControlName="email" type="email" class="form-control" id="email" placeholder="Email-Adress">
                     </div>
                     <div class="form-group col-md-5">
-                        <input type="tel" class="form-control" id="tel" placeholder="Phone Number">
+                        <input formControlName="phone" type="tel" class="form-control" id="tel" placeholder="Phone Number">
                     </div>
                 </div>
             </form>
         </div>
         <hr>
-        <div class="payment-method">
+        <form class="payment-method">
             <div class="row">
                 <div class="col-md-5 my-3">
                     <div class="font-color h3">
@@ -79,7 +79,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
         <div class="py-4 text-center d-flex flex-column align-items-center ">
             <button class="btn-main rounded rounded-5 px-lg-5 py-1 w-25">Place Order</button>
             <button class="btn-main btn-shop rounded rounded-5 px-lg-5 py-1 w-25 mt-2">Continue shopping</button>

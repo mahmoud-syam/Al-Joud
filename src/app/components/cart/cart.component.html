@@ -46,6 +46,10 @@
                 </table>
             </div> -->
     </div>
+    <div class="cart-buttons text-center">
+      <button class="btn btn-main w-100 text-uppercase">Continue Shopping</button>
+      <button class="btn btn-main w-100 text-uppercase" [routerLink]="['/checkout' , cartDetails.id ]" >Checkout <i class="fa-brands fa-cc-visa fa-beat"></i></button>
+    </div>
   </div>
 </section>
 

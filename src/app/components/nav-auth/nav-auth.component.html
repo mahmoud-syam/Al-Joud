@@ -1,4 +1,6 @@
-<nav class="navbar navbar-expand-lg fixed-top" [class.bg-nav]="!isscrolling">
+<nav class="navbar navbar-expand-lg fixed-top" [ngClass]="{ 'bg-nav':!isscrolling ,
+'color-nav': !isscrolling
+}">
     <div class="container">
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">

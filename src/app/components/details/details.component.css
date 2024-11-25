@@ -64,3 +64,6 @@
     border: 1px solid var(--font-color) !important;
     font-weight: bold;
 }
+.product-img img {
+    width: 65% !important;
+}

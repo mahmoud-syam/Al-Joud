@@ -1,0 +1,45 @@
+.about{
+    font-family: var(--font-family) !important;
+    background-image: url("../../../assets/Gallary/background.png");
+    background-size: 100% 100%;
+    background-position: center ;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.about .about-cont h2{
+    font-size: 26px !important;
+    font-weight: 800;
+}
+.about .about-cont p {
+    font-size: 25px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 1.1;
+    padding: 15px 0 !important;
+    color: #1f2021;
+}
+.social-list a {
+    border: 1px solid var(--font-color);
+    padding: 8px;
+    color: var(--font-color) !important;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    margin-left: 7px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.social-list a:hover {
+    background-color: var(--main-color);
+    color: white !important;
+    /* border: 1px solid white; */
+}
