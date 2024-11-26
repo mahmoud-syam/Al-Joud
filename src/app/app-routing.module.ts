@@ -20,25 +20,25 @@ const routes: Routes = [
 
   // home component
   {
-    path: '', component: BlankLayoutComponent, title: 'AlJoud | Home', children: [
+    path: '', component: BlankLayoutComponent, title: 'AlJoud', children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent, title: 'AlJoud | Home' },
-      { path: 'contacts', component: ContactsComponent, title: 'AlJoud | Contacts' },
-      { path: 'about', component: AboutComponent, title: 'AlJoud | About' },
-      { path: 'details/:id', component: DetailsComponent, title: 'AlJoud | Details' },
-      { path: 'product', component: ProductComponent, title: 'AlJoud | Product' },
+      { path: 'home', component: HomeComponent, title: 'AlJoud' },
+      { path: 'contacts', component: ContactsComponent, title: 'Contacts' },
+      { path: 'about', component: AboutComponent, title: 'About' },
+      { path: 'details/:id', component: DetailsComponent, title: 'Details' },
+      { path: 'product', component: ProductComponent, title: 'Product' },
       { path: 'forgetpassword', component: ForgepasswordComponent, title: 'ForgetPasword' },
-      { path: 'category', component: CategoryComponent, title: 'AlJoud | Category' },
-      { path: 'cart', component: CartComponent, title: 'AlJoud | Cart' },
+      { path: 'category', component: CategoryComponent, title: 'Category' },
+      { path: 'cart', component: CartComponent, title: 'Cart' },
     ]
   },
 
   // authintication component
   {
-    path: '', component: AuthLayoutComponent, title: 'AlJoud | Home', children: [
-      { path: 'login', component: LoginComponent, title: 'AlJoud | Login' },
-      { path: 'register', component: RegisterComponent, title: 'AlJoud | register' },
-      { path: 'checkout/:id', component: CheckoutComponent, title: 'AlJoud | Checkout' },
+    path: '', component: AuthLayoutComponent, title: 'AlJoud ', children: [
+      { path: 'login', component: LoginComponent, title: 'Login' },
+      { path: 'register', component: RegisterComponent, title: 'register' },
+      { path: 'checkout/:id', component: CheckoutComponent, title: 'Checkout' },
     ]
   },
 

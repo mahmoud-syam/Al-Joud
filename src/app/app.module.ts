@@ -20,7 +20,7 @@ import { ProductComponent } from './components/product/product.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 // To allow api access 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { AuthLayoutComponent } from './components/auth-layout/auth-layout.component';
 import { BlankLayoutComponent } from './components/blank-layout/blank-layout.component';
 import { NavAuthComponent } from './components/nav-auth/nav-auth.component';
@@ -30,6 +30,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 // tranlslation
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { LoadingInterceptor } from './Shared/interceptors/loading.interceptor';
 
 
 // tranlslation
@@ -69,6 +71,7 @@ export function HttpLoaderFactory(http: HttpClient){
     RouterModule,
     FormsModule,
     HttpClientModule,
+    NgxSpinnerModule,
     ToastrModule.forRoot(),
     // tranlslation
     TranslateModule.forRoot({
@@ -80,7 +83,9 @@ export function HttpLoaderFactory(http: HttpClient){
     })
 
   ],
-  providers: [],
+  providers: [ 
+    {provide:HTTP_INTERCEPTORS , useClass:LoadingInterceptor , multi: true},
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
