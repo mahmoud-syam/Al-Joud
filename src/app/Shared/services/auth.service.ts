@@ -4,34 +4,36 @@ import { jwtDecode } from 'jwt-decode';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
-  constructor(private _HttpClient: HttpClient) { }
+  constructor(private _HttpClient: HttpClient) {}
   // property to save token
   userData: any;
 
   // Method to decode user
-  saveUserData() {
+  saveUserData(userData: any) {
     if (localStorage.getItem('eToken') != null) {
-      let encodeToken: any = localStorage.getItem('eToken');
-      let decodeToken = jwtDecode(encodeToken);
-      this.userData = decodeToken;
-      console.log(decodeToken);
-
+      const Token: any = sessionStorage.getItem('eToken');
+      if (Token) {
+        this.userData = userData;
+        sessionStorage.setItem('user', JSON.stringify(userData));
+      }
     }
   }
-
-
   // Method to register a user
   setRegister(userData: object): Observable<any> {
-    return this._HttpClient.post(`https://lightgray-duck-186253.hostingersite.com/api/register`, userData)
+    return this._HttpClient.post(
+      `https://lightgray-duck-186253.hostingersite.com/api/register`,
+      userData
+    );
   }
 
   // Method to login a user
   setLogin(userData: object): Observable<any> {
-    return this._HttpClient.post(`https://lightgray-duck-186253.hostingersite.com/api/login`, userData)
+    return this._HttpClient.post(
+      `https://lightgray-duck-186253.hostingersite.com/api/login`,
+      userData
+    );
   }
 }
-

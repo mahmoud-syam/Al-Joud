@@ -7,30 +7,30 @@ import { CartService } from 'src/app/Shared/services/cart.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  constructor(private _CartService: CartService) {}
-  cartDetails:any = null;
+  cartDetails: any[] = []; // Initialize as an empty array
 
+  constructor(private _CartService: CartService) {}
 
   ngOnInit(): void {
     this._CartService.getCartUser().subscribe({
       next: (response) => {
         console.log(response);
-        
-        this.cartDetails = response.cart;
+        if (response && response.cart) {
+          this.cartDetails = response.cart;
+        } else {
+          console.warn('Cart is empty or invalid');
+          this.cartDetails = [];
+        }
       },
       error: (error) => {
-        console.log('Error fetching cart items', error);
+        console.error('Error fetching cart items', error);
+        this.cartDetails = []; // Ensure the cartDetails is an empty array on error
       },
-    })
+    });
   }
 
 
-
-
-
-
-
-
-
-
-};
+  getTotalPrice(): number {
+    return this.cartDetails.reduce((total, item) => total + item.total_price, 0);
+  }
+}

@@ -32,6 +32,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './Shared/interceptors/loading.interceptor';
+import { AuthInterceptor } from './Shared/interceptors/auth.interceptor';
 
 
 // tranlslation
@@ -85,6 +86,8 @@ export function HttpLoaderFactory(http: HttpClient){
   ],
   providers: [ 
     {provide:HTTP_INTERCEPTORS , useClass:LoadingInterceptor , multi: true},
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true } ,
+
   ],
   bootstrap: [AppComponent]
 })

@@ -31,26 +31,24 @@ export class LoginComponent {
       this.isLoading = true;
       this._AuthService.setLogin(this.loginForm.value).subscribe({
         next: (response) => {
-          if (response.message == 'Login successful.') {
-            localStorage.setItem('eToken' , response.token);
-            this._AuthService.saveUserData();
-            this._Router.navigate(['/home'])
-            this.isLoading = false;
+          
+          if (response && response.token) { 
+            sessionStorage.setItem('eToken', response.token); 
+            this._AuthService.saveUserData(response.user);   
+            this._Router.navigate(['/home']);                
+            this.isLoading = false;                          
+          } else {
+            console.error("Unexpected response format", response);
           }
-
-
-
         },
         error: (err: HttpErrorResponse) => {
           this.isLoading = false;
-          this.msgError = err.error.message
+          this.msgError = err.error.message || "An error occurred"; 
           console.log(err.error.message);
-
         }
-      }
-
-      )
-    }
+      });
+      
     // alert('Syam')
   }
+}
 }
