@@ -15,6 +15,7 @@ import { BlankLayoutComponent } from './components/blank-layout/blank-layout.com
 import { AuthLayoutComponent } from './components/auth-layout/auth-layout.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ForgepasswordComponent } from './components/forgepassword/forgepassword.component';
+import { ProductsComponent } from './components/products/products.component';
 
 const routes: Routes = [
 
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'about', component: AboutComponent, title: 'About' },
       { path: 'details/:id', component: DetailsComponent, title: 'Details' },
       { path: 'product', component: ProductComponent, title: 'Product' },
+      { path: 'products', component: ProductsComponent, title: 'All Products' },
       { path: 'forgetpassword', component: ForgepasswordComponent, title: 'ForgetPasword' },
       { path: 'category', component: CategoryComponent, title: 'Category' },
       { path: 'cart', component: CartComponent, title: 'Cart' },

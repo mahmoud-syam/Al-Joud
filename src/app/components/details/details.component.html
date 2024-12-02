@@ -2,7 +2,7 @@
   <h5 class="font-color text-decoration-underline">
     Home\Asssortment sweets\Mabroumeh
   </h5>
-  <div class="row py-4">
+  <div class="row py-4" *ngFor="let product of products">
     <div class="col-md-6 text-center mx-auto">
       <div class="product-img">
         <img
@@ -55,7 +55,7 @@
         <input type="number" class="form-control w-50" placeholder="0" />
       </form>
       <div class="my-4 w-100">
-        <button class="btn-main btn-primary w-75 text-uppercase fw-bold">
+        <button class="btn-main btn-primary w-75 text-uppercase fw-bold" (click)="addProduct(product.id)">
           Add to Cart
         </button>
       </div>

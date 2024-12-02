@@ -1,0 +1,50 @@
+.box-content{
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+.box-content .box-img .inner-image{
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    overflow: hidden;
+
+}
+.box-content .box-img .inner-image img{
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+.box-content .box-img .inner-image img:hover{
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+.addcart{
+    position: absolute;
+    background-color: #ffffff4d;
+    width: 70px;
+    height: 120px;
+    top: 10px;
+    right: -80px;
+    border-radius: 5px;
+    transition: all 1.2s ease-in;
+}
+.products .box-content:hover .addcart{
+    top: 10px;
+    right: 5px;
+}
+.products .addcart i {
+    font-size: 30px;
+    cursor: pointer;
+}

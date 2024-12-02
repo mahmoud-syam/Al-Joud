@@ -33,6 +33,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './Shared/interceptors/loading.interceptor';
 import { AuthInterceptor } from './Shared/interceptors/auth.interceptor';
+import { ProductsComponent } from './components/products/products.component';
 
 
 // tranlslation
@@ -60,7 +61,8 @@ export function HttpLoaderFactory(http: HttpClient){
     BlankLayoutComponent,
     NavAuthComponent,
     RegisterComponent,
-    ForgepasswordComponent
+    ForgepasswordComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,8 @@ import { catchError, Observable, throwError } from 'rxjs';
 export class CartService {
   constructor(private _HttpClient: HttpClient) {}
 
-  private baseUrl: string = 'https://lightgray-duck-186253.hostingersite.com/api/';
+  private baseUrl: string =
+    'https://lightgray-duck-186253.hostingersite.com/api/';
 
   addToCart(prodId: string): Observable<any> {
     return this._HttpClient
@@ -18,7 +19,10 @@ export class CartService {
         catchError((error: HttpErrorResponse) => {
           console.error('An error occurred:', error);
           return throwError(
-            () => new Error('Failed to add product to cart. Please try again later.')
+            () =>
+              new Error(
+                'Failed to add product to cart. Please try again later.'
+              )
           );
         })
       );
@@ -34,28 +38,33 @@ export class CartService {
       })
     );
   }
+
+  removeCartItem(prodId: string): Observable<any> {
+    return this._HttpClient.delete(`${this.baseUrl}cart/remove/${prodId}`).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error(
+          'An error occurred while trying to remove the item:',
+          error
+        );
+        return throwError(
+          () => new Error('Failed to fetch cart. Please try again later.')
+        );
+      })
+    );
+  };
+  ClearCart(prodId: string): Observable<any> {
+    return this._HttpClient.delete(`${this.baseUrl}cart/remove`).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error(
+          'An error occurred while trying to remove the item:',
+          error
+        );
+        return throwError(
+          () => new Error('Failed to fetch cart. Please try again later.')
+        );
+      })
+    );
+  };
+  
+  
 }
-  // addToCart(prodId: string): Observable<any> {
-
-  //   return this._HttpClient.post(
-  //     `https://lightgray-duck-186253.hostingersite.com/api/cart/add`,
-
-  //     {
-  //       product_id: prodId,
-  //     },
-  //     {
-  //       headers:
-  //         {Authorization: 'Bearer' + localStorage.getItem('token'),}
-  //         // {token:JSON.stringify(localStorage.getItem('etoken'))}
-  //     },
-  //   );
-  // }
-  // addToCart(prodId: string): Observable<any> {
-  //   let headers = { Authorization: `Bearer token` };
-  //   return this._HttpClient.post(
-  //     'https://lightgray-duck-186253.hostingersite.com/api/cart/add',
-  //     { product_id: prodId },
-  //     { headers }
-  //   );
-  // }
-

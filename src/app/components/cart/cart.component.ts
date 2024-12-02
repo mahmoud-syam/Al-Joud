@@ -7,7 +7,7 @@ import { CartService } from 'src/app/Shared/services/cart.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  cartDetails: any[] = []; 
+  cartDetails: any[] = [];
 
   constructor(private _CartService: CartService) {}
 
@@ -24,13 +24,31 @@ export class CartComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error fetching cart items', error);
-        this.cartDetails = []; 
+        this.cartDetails = [];
       },
     });
   }
 
-
   getTotalPrice(): number {
-    return this.cartDetails.reduce((total, item) => total + item.total_price, 0);
+    return this.cartDetails.reduce(
+      (total, item) => total + item.total_price,
+      0
+    );
+  }
+
+  removeItem(id: string): void {
+    this._CartService.removeCartItem(id).subscribe({
+      next: (response) => {
+        console.log('Product removed from cart:', response);
+        this.cartDetails = response.cart;
+      },
+      error: (error) => {
+        console.error('Error removing product from cart:', error);
+      },
+    });
+  }
+
+  changeCount(count: number , id:string): void {
+    console.log(count + ' changes');
   }
 }
