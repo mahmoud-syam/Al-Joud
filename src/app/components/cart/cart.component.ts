@@ -7,7 +7,7 @@ import { CartService } from 'src/app/Shared/services/cart.service';
   styleUrls: ['./cart.component.css'],
 })
 export class CartComponent implements OnInit {
-  cartDetails: any[] = []; // Initialize as an empty array
+  cartDetails: any[] = []; 
 
   constructor(private _CartService: CartService) {}
 
@@ -24,7 +24,7 @@ export class CartComponent implements OnInit {
       },
       error: (error) => {
         console.error('Error fetching cart items', error);
-        this.cartDetails = []; // Ensure the cartDetails is an empty array on error
+        this.cartDetails = []; 
       },
     });
   }
