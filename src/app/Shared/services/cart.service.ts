@@ -39,19 +39,35 @@ export class CartService {
     );
   }
 
-  removeCartItem(prodId: string): Observable<any> {
-    return this._HttpClient.delete(`${this.baseUrl}cart/remove/${prodId}`).pipe(
-      catchError((error: HttpErrorResponse) => {
-        console.error(
-          'An error occurred while trying to remove the item:',
-          error
-        );
-        return throwError(
-          () => new Error('Failed to fetch cart. Please try again later.')
-        );
-      })
-    );
-  };
+  removeFromCart(prodId: string): Observable<any> {
+    console.log('removeFromCart', prodId);
+    return this._HttpClient
+      .delete(`${this.baseUrl}cart/remove`, {body: {
+        product_id: prodId,
+      }})
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          console.error('An error occurred:', error);
+          return throwError(
+            () => new Error('Failed to remove product from cart. Please try again later.')
+          );
+        })
+      );
+    }
+    
+  // removeCartItem(prodId: string): Observable<any> {
+  //   return this._HttpClient.delete(`${this.baseUrl}cart/remove/${prodId}`).pipe(
+  //     catchError((error: HttpErrorResponse) => {
+  //       console.error(
+  //         'An error occurred while trying to remove the item:',
+  //         error
+  //       );
+  //       return throwError(
+  //         () => new Error('Failed to fetch cart. Please try again later.')
+  //       );
+  //     })
+  //   );
+  // };
   ClearCart(prodId: string): Observable<any> {
     return this._HttpClient.delete(`${this.baseUrl}cart/remove`).pipe(
       catchError((error: HttpErrorResponse) => {

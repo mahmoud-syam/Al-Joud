@@ -37,10 +37,12 @@ export class CartComponent implements OnInit {
   }
 
   removeItem(id: string): void {
-    this._CartService.removeCartItem(id).subscribe({
+    this._CartService.removeFromCart(id).subscribe({
       next: (response) => {
         console.log('Product removed from cart:', response);
-        this.cartDetails = response.cart;
+        // this.cartDetails = response.cart;
+        // refresh cart
+        this.ngOnInit();
       },
       error: (error) => {
         console.error('Error removing product from cart:', error);
