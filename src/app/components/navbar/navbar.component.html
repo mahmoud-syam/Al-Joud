@@ -68,7 +68,7 @@
           <li>
             <hr class="dropdown-divider">
           </li>
-          <li><a class="dropdown-item">Another action</a></li>
+          <li><a class="dropdown-item"  (click)="signOut()" >Sign Out</a></li>
         </ul>
       </li>
       <!-- -------------------------------------------------------------- -->
@@ -78,7 +78,10 @@
       </a>
       <a class="navbar" aria-current="page" routerLink="cart">
         <a class="nav-link text-uppercase text-main " routerLinkActive="text-main" routerLink="cart">Cart</a>
-        <i class="fas fa-shopping-cart fa-fw"></i>
+        <div class="position-relative">
+          <i class="fas fa-shopping-cart fa-1x "></i>
+        <!-- <span class="badge  position-absolute bottom-50 start-50"> 0 </span> -->
+        </div>
       </a>
 
     </div>

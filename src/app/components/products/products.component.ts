@@ -19,12 +19,18 @@ export class ProductsComponent implements OnInit {
     private _ToastrService: ToastrService,
   ) {}
   products: Product[] = [];
+  pageSize:number = 0; //limit
+  currentPage:number = 1; // page number
+  total:number = 0;
+
   ngOnInit(): void {
     // get product
     this._ApidataService.getProducts().subscribe({
       next: (response) => {
         this.products = response.data;
-        // console.log(response);
+        this.pageSize = response.meta.per_page; // get total pages
+        this.currentPage = response.meta.current_page
+        this.total = response.meta.total; // get total products
       },
       error: (error) => {
         console.error('Error fetching data', error);
@@ -42,5 +48,22 @@ export class ProductsComponent implements OnInit {
         this._ToastrService.error('Failed to add product to cart!');
       },
     });
+  };
+
+
+  pageChanged(event: any): void {
+     // get product
+     this._ApidataService.getProducts(event).subscribe({
+      next: (response) => {
+        this.products = response.data;
+        this.pageSize = response.meta.per_page; // get total pages
+        this.currentPage = response.meta.current_page
+        this.total = response.meta.total; // get total products
+      },
+      error: (error) => {
+        console.error('Error fetching data', error);
+      },
+    });
+    
   }
 }

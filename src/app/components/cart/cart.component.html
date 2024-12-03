@@ -7,7 +7,7 @@
     <div class="cart-cont ">
       <div class="font-color h3 py-3 d-flex justify-content-between align-items-lg-center">
         <div>Total Price : {{ getTotalPrice() | currency:'EUR' }}</div>
-        <button class="btn btn-sm btn-outline-danger">Clear All</button>
+        <!-- <button class="btn btn-sm btn-outline-danger" (click)="Clear()">Clear All</button> -->
       </div>
       
       <div class="row border-bottom py-2" *ngFor="let item of cartDetails">
@@ -25,15 +25,15 @@
             </button>
           </div>
           <div>
-            <button class="btn btn-sm border-success" (click)="changeCount(item.quantity - 1 , item.product_id)" > - </button>
-            <span class="fs-3"> {{ item.quantity }} </span>
-            <button class="btn btn-sm border-success" (click)="changeCount(item.quantity + 1 , item.product_id)"> + </button>
+            <!-- <button class="btn btn-sm border-success" (click)="changeCount(item.quantity - 1 , item.product_id)"> - </button> -->
+            <span class="fs-2 font-color"> {{ item.quantity }} </span>
+            <!-- <button class="btn btn-sm border-success" (click)="changeCount(item.quantity + 1 , item.product_id)"> + </button> -->
           </div>
         </div>
       </div>
       
     </div>
-    <div class="cart-buttons text-center mx-auto my-2 d-flex flex-column text-center align-items-center justify-content-center">
+    <div class="cart-buttons text-center mx-auto py-4 d-flex flex-column text-center align-items-center justify-content-center">
       <button class="btn btn-main w-50 text-uppercase rounded rounded-5">Continue Shopping</button>
       <button class="btn btn-main w-50 text-uppercase rounded rounded-5" [routerLink]="['/checkout', cartDetails[0]?.product_id ]" >Checkout <i class="fa-brands fa-cc-visa fa-beat"></i></button>
     </div>

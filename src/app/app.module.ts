@@ -34,6 +34,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './Shared/interceptors/loading.interceptor';
 import { AuthInterceptor } from './Shared/interceptors/auth.interceptor';
 import { ProductsComponent } from './components/products/products.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 // tranlslation
@@ -62,7 +63,8 @@ export function HttpLoaderFactory(http: HttpClient){
     NavAuthComponent,
     RegisterComponent,
     ForgepasswordComponent,
-    ProductsComponent
+    ProductsComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -75,6 +77,7 @@ export function HttpLoaderFactory(http: HttpClient){
     FormsModule,
     HttpClientModule,
     NgxSpinnerModule,
+    NgxPaginationModule,
     ToastrModule.forRoot(),
     // tranlslation
     TranslateModule.forRoot({

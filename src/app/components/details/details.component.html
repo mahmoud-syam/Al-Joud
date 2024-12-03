@@ -2,7 +2,7 @@
   <h5 class="font-color text-decoration-underline">
     Home\Asssortment sweets\Mabroumeh
   </h5>
-  <div class="row py-4" *ngFor="let product of products">
+  <div class="row py-4" *ngFor="let product of products.slice(0,1)">
     <div class="col-md-6 text-center mx-auto">
       <div class="product-img">
         <img
@@ -92,7 +92,7 @@
           </div>
         </div>
         <div
-          class="addcart my-2 w-100 text-uppercase cursor-pointer font-color border border-1 rounded text-center"
+          class="addcart my-2 w-100 text-uppercase cursor-pointer font-color border border-1 rounded text-center" (click)="addProduct(product.id)"
         >
           + add
         </div>

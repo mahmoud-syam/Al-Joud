@@ -28,14 +28,14 @@ export class CartComponent implements OnInit {
       },
     });
   }
-
+  // Done
   getTotalPrice(): number {
     return this.cartDetails.reduce(
       (total, item) => total + item.total_price,
       0
     );
   }
-
+  // Done
   removeItem(id: string): void {
     this._CartService.removeFromCart(id).subscribe({
       next: (response) => {
@@ -49,8 +49,32 @@ export class CartComponent implements OnInit {
       },
     });
   }
+  // increase quantity and decrease quantity
+  changeCount(count: number, id: string): void {
+    this._CartService.UpdateCartItem(id, count).subscribe({
+      next: (response) => {
+        console.log('Product count updated:', response);
+        this.cartDetails = response.cart;
+        // refresh cart
+        this.ngOnInit();
+      },
+      error: (error) => {
+        console.error('Error updating product count:', error);
+      },
+    });
+    console.log(count + 'changes');
+  }
 
-  changeCount(count: number , id:string): void {
-    console.log(count + ' changes');
+  // Clear all cart
+  Clear(): void {
+    this._CartService.clearCart().subscribe({
+      next: (response) => {
+        console.log('Cart cleared:', response);
+        this.cartDetails = [];
+      },
+      error: (error) => {
+        console.error('Error clearing cart:', error);
+      },
+    });
   }
 }

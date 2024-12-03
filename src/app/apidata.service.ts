@@ -11,9 +11,9 @@ export class ApidataService {
   constructor(private _HttpClient: HttpClient) { }
 
 
-
-  getProducts(): Observable<any> {
-    return this._HttpClient.get(`https://lightgray-duck-186253.hostingersite.com/api/products`)
+  baseUrl:string = `https://lightgray-duck-186253.hostingersite.com/api/`
+  getProducts(pageNum:number=1): Observable<any> {
+    return this._HttpClient.get(this.baseUrl + `products?page=${pageNum}`)
   }
 
   getProductDeials(id: string): Observable<any> {

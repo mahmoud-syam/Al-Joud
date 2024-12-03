@@ -1,34 +1,67 @@
 <section class="products pt-100 min-vh-100">
-    <div class="container">
-        <div class="products-title">
-            <h2 class="text-uppercase font-color fw-bold">All Products</h2>
-        </div>
-        <hr>
-       <div class="row font-color">
-         <!-- Product List -->
-           <div class="col-md-3" *ngFor="let product of products">
-             <!-- Product Card -->
-             <div class="box-content">
-                <div [routerLink]="['/details' , product.id]">
-                    <div class="box-img">
-                        <div class="inner-image">
-                            <img [src]="product.images[0]" [alt]="product.name">
-                        </div>
-                    </div>
-                    <div class="box-info text-center pt-2 pb-2">
-                        <h2> {{product.name}} </h2>
-                        <h3> {{product.base_price | currency:'EUR' }} </h3>
-                        <!-- <a routerLink="./category">lorem</a> -->
-                    </div>
-                </div>
-                <div class="addcart d-flex justify-content-center align-items-center flex-column">
-                    <i class="fa-regular fa-square-plus fw-bold pb-4"  (click)="addProduct(product.id)" ></i>
-                    <i class="fa-solid fa-heart"></i>
-                </div>
-            </div>
-           </div>
-         </div>
+  <div class="container">
+    <div class="products-title">
+      <h2 class="text-uppercase font-color fw-bold">All Products</h2>
     </div>
-       
+    <hr />
+    <div class="row font-color">
+      <!-- Product List -->
+      <div
+        class="col-md-3"
+        *ngFor="
+          let product of products
+            | paginate
+              : {
+                  id: 'productPaginte',
+                  itemsPerPage: pageSize,
+                  currentPage: currentPage,
+                  totalItems: total
+                }
+        "
+      >
+        <!-- Product Card -->
+        <div class="box-content">
+          <div [routerLink]="['/details', product.id]">
+            <div class="box-img">
+              <div class="inner-image">
+                <img [src]="product.images[0]" [alt]="product.name" />
+              </div>
+            </div>
+            <div class="box-info text-center pt-2 pb-2">
+              <h2>{{ product.name }}</h2>
+              <h3>{{ product.base_price | currency : "EUR" }}</h3>
+              <!-- <a routerLink="./category">lorem</a> -->
+            </div>
+          </div>
+          <div
+            class="addcart d-flex justify-content-center align-items-center flex-column"
+          >
+            <i
+              class="fa-regular fa-square-plus fw-bold pb-4"
+              (click)="addProduct(product.id)"
+            ></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </div>
+      </div>
+    </div>
     
+  </div>
+ <div class="d-flex justify-content-center bg-danger my">
+    <pagination-controls
+    id="productPaginte"
+    (pageChange)="pageChanged($event)"
+    (pageBoundsCorrection)="pageChanged($event)"
+    [maxSize]="15"
+    [directionLinks]="true"
+    [autoHide]="true"
+    [responsive]="true"
+    previousLabel="Previous"
+    nextLabel="Next"
+    screenReaderPaginationLabel="Pagination"
+    screenReaderPageLabel="page"
+    screenReaderCurrentLabel="You're on page"
+  >
+  </pagination-controls>
+ </div>
 </section>
