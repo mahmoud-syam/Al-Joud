@@ -9,7 +9,7 @@ export class CartService {
 
   private baseUrl: string =
     'https://lightgray-duck-186253.hostingersite.com/api/';
-// Done
+  // Done
   addToCart(prodId: string): Observable<any> {
     return this._HttpClient
       .post(`${this.baseUrl}cart/add`, {
@@ -27,7 +27,7 @@ export class CartService {
         })
       );
   }
-// Done
+  // Done
   getCartUser(): Observable<any> {
     return this._HttpClient.get(`${this.baseUrl}cart`).pipe(
       catchError((error: HttpErrorResponse) => {
@@ -38,7 +38,7 @@ export class CartService {
       })
     );
   }
-// Done
+  // Done
   removeFromCart(prodId: string): Observable<any> {
     console.log('removeFromCart', prodId);
     return this._HttpClient
@@ -59,8 +59,8 @@ export class CartService {
         })
       );
   }
-// Not Done
-  UpdateCartItem(prodId: string , countNum:number): Observable<any> {
+  // Not Done
+  UpdateCartItem(prodId: string, countNum: number): Observable<any> {
     return this._HttpClient
       .post(`${this.baseUrl}cart`, {
         body: {
@@ -80,7 +80,7 @@ export class CartService {
         })
       );
   }
-// Not Done
+  // Not Done
   clearCart(): Observable<any> {
     return this._HttpClient.delete(`${this.baseUrl}cart/remove`).pipe(
       catchError((error: HttpErrorResponse) => {
@@ -93,5 +93,21 @@ export class CartService {
         );
       })
     );
+  }
+
+  checkOut(cardId: string , orderInfo: object): Observable<any> {
+    return this._HttpClient
+      .post(`${this.baseUrl}cart/orders/${cardId}`, {
+        // items:prodInfo,
+        address: orderInfo,
+      })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          console.error('An error occurred:', error);
+          return throwError(
+            () => new Error('Failed to check out. Please try again later.')
+          );
+        })
+      );
   }
 }

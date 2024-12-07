@@ -1,63 +1,114 @@
 <section class="checkout pt-100">
-    <div class="container">
-        <div class="checkout-title">
-            <h2 class="text-uppercase font-color fw-bold">checkout</h2>
+  <div class="container">
+    <div class="checkout-title">
+      <h2 class="text-uppercase font-color fw-bold">checkout</h2>
+    </div>
+    <hr />
+    <div class="checkout-cont">
+      <div class="font-color h3 py-3">Shipping Information</div>
+      <form [formGroup]="orderForm" class="form-control border-0 p-0">
+        <div class="row">
+          <div class="form-group col-md-5">
+            <input
+              formControlName="firstname"
+              type="text"
+              class="form-control"
+              id="first-name"
+              placeholder="First Name"
+              required
+            />
+          </div>
+          <div class="form-group col-md-5">
+            <input
+              formControlName="lastname"
+              type="text"
+              class="form-control"
+              id="last-name"
+              placeholder="Last Name"
+              required
+            />
+          </div>
         </div>
-        <hr>
-        <div class="checkout-cont">
-            <div class="font-color h3 py-3">
-                Shipping Information
-            </div>
-            <form [formGroup]="orderForm" (ngSubmit)="handleForm()" class="form-control border-0 p-0">
-                <div class="row">
-                    <div class="form-group col-md-5">
-                        <input  formControlName="firstName" type="text" class="form-control " id="name" placeholder="First Name" required>
-                    </div>
-                    <div class="form-group col-md-5">
-                        <input formControlName="lastName" type="text" class="form-control" id="last-name" placeholder="Last Name" required>
-                    </div>
-                </div>
-                <div class="row py-3">
-                    <div class="form-group col-md-5">
-                        <input formControlName="city" type="text" class="form-control" id="city" placeholder="City">
-                    </div>
-                    <div class="form-group col-md-5">
-                        <input formControlName="address" type="address" class="form-control" id="address" placeholder="Address">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-5">
-                        <input formControlName="email" type="email" class="form-control" id="email" placeholder="Email-Adress">
-                    </div>
-                    <div class="form-group col-md-5">
-                        <input formControlName="phone" type="tel" class="form-control" id="tel" placeholder="Phone Number">
-                    </div>
-                </div>
-            </form>
+        <div class="row">
+          <div class="form-group col-md-5">
+            <input
+              formControlName="state"
+              type="text"
+              class="form-control"
+              id="state"
+              placeholder="State"
+            />
+          </div>
+          <div class="form-group col-md-5">
+            <input
+              formControlName="phone"
+              type="tel"
+              class="form-control"
+              id="tel"
+              placeholder="Phone Number"
+            />
+          </div>
         </div>
-        <hr>
-        <form class="payment-method">
-            <div class="row">
-                <div class="col-md-5 my-3">
-                    <div class="font-color h3">
-                        Payment Method
-                    </div>
-                    <div class="form-check d-flex align-items-center my-2">
-                        <input class="form-check-input" type="radio" name="payment-method" id="credit-card"
-                            value="credit-card">
-                        <label class="form-check-label" for="credit-card">
-                            <img class="w-50" src="./assets/Gallary/pay.png" alt="pay">
-                        </label>
-                    </div>
-                    <div class="form-check d-flex align-items-center">
+        <div class="row py-3">
+          <div class="form-group col-md-5">
+            <input
+              formControlName="city"
+              type="text"
+              class="form-control"
+              id="city"
+              placeholder="City"
+            />
+          </div>
+          <div class="form-group col-md-5">
+            <input
+              formControlName="zipcode"
+              type="number"
+              class="form-control"
+              id="zipcode"
+              placeholder="Zip Code"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-10">
+            <input
+              formControlName="address"
+              type="text"
+              class="form-control"
+              id="address"
+              placeholder="Address"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+    <hr />
+    <form class="payment-method">
+      <div class="row">
+        <div class="col-md-5 my-3">
+          <div class="font-color h3">Payment Method</div>
+          <div class="form-check d-flex align-items-center my-2">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="payment-method"
+              id="credit-card"
+              value="credit-card"
+            />
+            <label class="form-check-label text-center" for="credit-card">
+              <!-- <img class="w-50" src="./assets/Gallary/pay.png" alt="pay"> -->
+              <i class="fa-brands fa-stripe fa-beat-fade fa-lg"></i>
+            </label>
+          </div>
+          <!-- <div class="form-check d-flex align-items-center">
                         <input class="form-check-input" type="radio" name="payment-method" id="credit-card"
                             value="credit-card">
                         <label class="form-check-label" for="credit-card">
                             <img class="w-50" src="./assets/Gallary/paypal.png" alt="paypal">
                         </label>
-                    </div>
-                </div>
-                <div class="col-md-5">
+                    </div> -->
+        </div>
+        <!-- <div class="col-md-5">
                     <div class="form-control border-0 p-0">
                         <div class="form-group ">
                             <input type="text" class="form-control " id="cardname" placeholder="CardHolder's Name"
@@ -77,13 +128,21 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </form>
-        <div class="py-4 text-center d-flex flex-column align-items-center ">
-            <button class="btn-main rounded rounded-5 px-lg-5 py-1 w-25">Place Order</button>
-            <button class="btn-main btn-shop rounded rounded-5 px-lg-5 py-1 w-25 mt-2">Continue shopping</button>
-        </div>
-
+                </div> -->
+      </div>
+    </form>
+    <div class="py-4 text-center d-flex flex-column align-items-center">
+      <button
+        class="btn-main rounded rounded-5 px-lg-5 py-1 w-25"
+        (click)="handleForm()"
+      >
+        Place Order
+      </button>
+      <button
+        class="btn-main btn-shop rounded rounded-5 px-lg-5 py-1 w-25 mt-2"
+      >
+        Continue shopping
+      </button>
     </div>
+  </div>
 </section>
