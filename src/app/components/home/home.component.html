@@ -15,13 +15,13 @@
                                 <h2 class="title1 pb-2 text-uppercase"> {{'TITLE' | translate}} </h2>
                                 <div class="title2 row pb-4 d-flex align-items-center">
                                     <div class="col-md-8">
-                                        <h2 class="title3 text-uppercase">AL joud <br> SWEETS</h2>
+                                        <h2 class="title3 text-uppercase">{{'MAIN-NAME1' | translate}} <br> {{'MAIN-NAME2' | translate}}</h2>
                                     </div>
                                     <div class="logo-2 col-md-4">
                                         <img class="w-100" src=" ./assets/Gallary/home-logo.png" alt="logo">
                                     </div>
                                 </div>
-                                <a routerLink="/products" class="mybtn btn rounded rounded-5">Shop Now</a>
+                                <a routerLink="/products" class="mybtn btn rounded rounded-5">{{'Shop-Now' | translate}}</a>
                             </div>
                         </div>
                         <!-- right -->
@@ -32,56 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item ">
-                    <div class="row d-flex justify-content-center align-items-center">
-                        <!-- left -->
-                        <div class="col-md-6 pt-4 pb-4">
-                            <div class="text-center">
-                                <h2 class="title1 pb-2 text-uppercase"> {{'TITLE' | translate}} </h2>
-                                <div class="title2 row pb-4 d-flex align-items-center">
-                                    <div class="col-md-8">
-                                        <h2 class="title3 text-uppercase">AL joud <br> SWEETS</h2>
-                                    </div>
-                                    <div class="logo-2 col-md-4">
-                                        <img class="w-100" src=" ./assets/Gallary/home-logo.png" alt="logo">
-                                    </div>
-                                </div>
-                                <a routerLink="/products" class="mybtn btn rounded rounded-5">Shop Now</a>
-                            </div>
-                        </div>
-                        <!-- right -->
-                        <div class="offset-lg-1 col-md-5 text-center">
-                            <div class="image mx-auto">
-                                <img class="w-100" src="./assets/Gallary/home1.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item ">
-                    <div class="row d-flex justify-content-center align-items-center">
-                        <!-- left -->
-                        <div class="col-md-6 pt-4 pb-4">
-                            <div class="text-center">
-                                <h2 class="title1 pb-2 text-uppercase"> {{'TITLE' | translate}} </h2>
-                                <div class="title2 row pb-4 d-flex align-items-center">
-                                    <div class="col-md-8">
-                                        <h2 class="title3 text-uppercase">AL joud <br> SWEETS</h2>
-                                    </div>
-                                    <div class="logo-2 col-md-4">
-                                        <img class="w-100" src=" ./assets/Gallary/home-logo.png" alt="logo">
-                                    </div>
-                                </div>
-                                <a routerLink="/products" class="mybtn btn rounded rounded-5">Shop Now</a>
-                            </div>
-                        </div>
-                        <!-- right -->
-                        <div class="offset-lg-1 col-md-5 text-center">
-                            <div class="image mx-auto">
-                                <img class="w-100" src="./assets/Gallary/home1.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
@@ -102,7 +53,7 @@
     <div class="container">
         <div class="title mt-1 position-relative">
             <img class="img-title" src=" ./assets/Gallary/frame1.png" alt="">
-            <h2 class="text-uppercase position-absolute">Best Sellers</h2>
+            <h2 class="text-uppercase position-absolute">{{'BestSellers' | translate}}</h2>
         </div>
         <div class="row pt-4 px-5">
             <div class="col-md-3 col-sm-6" *ngFor="let product of products.slice(0, 9) ">
@@ -134,7 +85,7 @@
 <section class="shop-now pt-4 pb-4 bg-primary">
     <div class="title text-center mt-1 position-relative">
         <img class="img-title" src=" ./assets/Gallary/frame2.png" alt="">
-        <h2 class="text-uppercase position-absolute">try our mixed <br> baklava big box</h2>
+        <h2 class="text-uppercase position-absolute">{{'mixed-bakalava1' | translate}} <br>{{'mixed-bakalava2' | translate}} </h2>
     </div>
     <div class="shop-cont container pt-5 text-center">
         <div class="row">
@@ -145,13 +96,11 @@
             </div>
             <div class=" col-md-6">
                 <div class="shop-info text-center">
-                    <h2 class="text-uppercase text-decoration-underline h3">Discover our Mixed Baklava Big Box</h2>
-                    <p class="pt-3 pb-3 m-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed posuere
-                        massa id massa dictum, ut
-                        faucibus dolor semper. Sed sed sapien id arcu malesuada feugiat.</p>
+                    <h2 class="text-uppercase text-decoration-underline h3">{{'mixed-bakalava3' | translate}}</h2>
+                    <p class="pt-3 pb-3 m-auto">{{'mixed-bakalava4' | translate}}</p>
                     <div class="btn-new position-relative">
                         <img src=" ./assets/Gallary/button2.png" alt="">
-                        <a routerLink="/products" class="position-absolute text-uppercase">Shop Now</a>
+                        <a routerLink="/products" class="position-absolute text-uppercase">{{'Shop-Now' | translate}}</a>
 
                     </div>
                 </div>
@@ -163,7 +112,7 @@
 <div class="gift-card py-2 bg-third">
     <div class="title text-center mt-1 position-relative">
         <img class="img-title" src=" ./assets/Gallary/frame4.png" alt="">
-        <h2 class="text-uppercase position-absolute">Gift Card</h2>
+        <h2 class="text-uppercase position-absolute">{{'Gift-Card' | translate}}</h2>
     </div>
     <div class="gift-card-cont row d-flex justify-content-center align-items-center">
         <div class="col-md-4">
@@ -172,10 +121,10 @@
             </div>
         </div>
         <div class="col-md-4 text-center">
-            <p class="text-uppercase pb-4 font-color">Share it with loved ones</p>
+            <p class="text-uppercase pb-4 font-color">{{'Gift-Card2' | translate}}</p>
             <div class="btn-new position-relative">
                 <img src=" ./assets/Gallary/button1.png" alt="">
-                <a class="position-absolute text-uppercase">Gift cart</a>
+                <a class="position-absolute text-uppercase">{{'Gift-Card' | translate}}</a>
             </div>
         </div>
         <div class="col-md-4"></div>
@@ -185,7 +134,7 @@
 <section class="carousel-section my-3" id="carousel-section">
     <div class="title text-center mt-1 position-relative">
         <img class="img-title" src=" ./assets/Gallary/frame1.png" alt="">
-        <h2 class="text-uppercase position-absolute">Taste of tradition Wrapped In Sweetness</h2>
+        <h2 class="text-uppercase position-absolute">{{'carousel-section' | translate}}</h2>
     </div>
     <div class="owl-cont my-4">
         <owl-carousel-o [options]="customOptions">
@@ -209,7 +158,7 @@
 <section class="choose-sweets p-4 text-center">
     <div class="title text-center mt-1 position-relative">
         <img class="img-title" src="./assets/Gallary/frame1.png" alt="">
-        <h2 class="text-uppercase position-absolute">choose your sweets</h2>
+        <h2 class="text-uppercase position-absolute">{{'choose-sweets1' | translate}}</h2>
     </div>
     <div class="choose-sweets-cont container">
         <div class="row g-1 m-auto">
@@ -233,7 +182,7 @@
 <section class="pistachio-section ">
     <div class="title text-center mt-1 position-relative">
         <img class="img-title" src=" ./assets/Gallary/frame2.png" alt="">
-        <h2 class="text-uppercase position-absolute">QUALITY PISTACHIO FROM <br> THE BEST PISTACHIO FARMS</h2>
+        <h2 class="text-uppercase position-absolute"> {{'pistachio-section1' | translate}} <br> {{'pistachio-section2' | translate}}</h2>
     </div>
     <div class="pistachio-section-cont">
         <div class="container py-3">
@@ -258,7 +207,7 @@
             <div class="row py-3">
                 <div class="col-md-12">
                     <div class="text-center">
-                        <h2 class="fw-bold text-uppercase text-main">our pistachio</h2>
+                        <h2 class="fw-bold text-uppercase text-main">{{'pistachio-section3' | translate}}</h2>
                     </div>
                 </div>
             </div>
@@ -305,17 +254,12 @@
             </div>
             <div class="col-md-7 text-center">
                 <div class="about-cont ">
-                    <h2 class="text-uppercase text-main">TRADITIONAL LUXURY MEETS MODERN
-                        PLEASURE</h2>
-                    <p>Our master confectioner learned his trade in one of the most important production facilities
-                        in Syria;</p>
-                    <p>Knowledge gathered from the great baklava masters Damascus.</p>
-                    <p>In Berlin we’re going one step further:A fusion of traditional luxury and modern enjoyment is
-                        the goal of <span class="text-main">AL JOUD</span>.. Discover the best baklava flavor made from
-                        ingredients that our grandparents already knew.
-                        ​</p>
-                    <p>We deliberately do not use any artificial additives in our production.</p>
-                    <p>There is only what belongs in it and that is of the highest quality!</p>
+                    <h2 class="text-uppercase text-main">{{'about1' | translate}}</h2>
+                    <p>{{'about2' | translate}}</p>
+                    <p>{{'about3' | translate}}</p>
+                    <p>{{'about4' | translate}} <span class="text-main">{{'about5' | translate}}</span>.. {{'about6' | translate}}</p>
+                    <p>{{'about7' | translate}}</p>
+                    <p>{{'about8' | translate}}</p>
                 </div>
             </div>
         </div>
