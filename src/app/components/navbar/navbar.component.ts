@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { TranslationService } from 'src/app/Shared/services/translation.service';
 
 @Component({
@@ -9,8 +10,10 @@ import { TranslationService } from 'src/app/Shared/services/translation.service'
 })
 export class NavbarComponent implements OnInit{
   
-  constructor(private _TranslationService:TranslationService , private _Router:Router) { }
+  constructor(private _TranslationService:TranslationService , private _Router:Router , private _ToastrService:ToastrService) { }
   
+  isLoggedIn = false;
+  username: string | null = null;
 
 
 
@@ -32,26 +35,26 @@ export class NavbarComponent implements OnInit{
 
 
     // Check if user is logged in
-    this._Router.events.subscribe((val:any)=>{
-      if(val.url){
-        if (localStorage.getItem('eToken')) {
-          // this.isLoggedIn = false;
-          console.log("User logged in");
-          
-        }else{
-          // this.isLoggedIn = true;
-          console.log("User logged out");
-          
-          // this._Router.navigate(['/home']);  // Redirect to home page if not logged in
-        }
-      }
-    });
+    const storedUser = sessionStorage.getItem('eToken');
+    if (storedUser) {
+      this.isLoggedIn = true;
+      this.username = storedUser;
+    }
   };
 
+  login() {
+    this.username = 'JohnDoe'; 
+    this.isLoggedIn = true;
+    localStorage.setItem('username', this.username);
+  }
 
 
   signOut(): void {
-    localStorage.removeItem('eToken');
     this._Router.navigate(['/login']);
+    this.isLoggedIn = false;
+    localStorage.removeItem('eToken');
+    sessionStorage.removeItem('eToken');
+    this.username = null;
+    this._ToastrService.success( 'Logged Out Successfully' );
   }
 }
