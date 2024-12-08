@@ -8,9 +8,9 @@
     <!-- Product Grid -->
     <section class="product-grid">
       <!-- Cart -->
-      <div class="product-card" *ngFor="let product of products">
+      <div class="product-card" *ngFor="let category of categories">
         <div class="img-cont position-relative">
-          <img class="img" [src]="product.images.slice(0,1)" [alt]="product.name" />
+          <img class="img" [src]="category.image" [alt]="category.name" />
           <div
             class="cont position-absolute rounded rounded-2 cursor-pointer px-1"
           >
@@ -21,10 +21,10 @@
             <span class="text-muted">to cart</span>
           </div>
         </div>
-        <h4 class="text-black mt-2">{{ product.name }}</h4>
+        <h4 class="text-black mt-2">{{ category.name }}</h4>
         <!-- ERORRRRRRRR -->
-        <h4 class="text-muted h6">{{ product.categoryprod }}</h4> 
-        <p>{{product.base_price | currency:'EUR'}} - {{product.base_price | currency:'EUR'}}</p>
+        <h4 class="text-muted h6">{{ category.slug }}</h4> 
+        <!-- <p>{{category.base_price | currency:'EUR'}} - {{category.base_price | currency:'EUR'}}</p> -->
       </div>
 
       <!-- Add more product cards here -->

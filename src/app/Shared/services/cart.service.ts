@@ -95,12 +95,9 @@ export class CartService {
     );
   }
 
-  checkOut(cardId: string , orderInfo: object): Observable<any> {
+  checkOut(cartId: string, checkoutData: any): Observable<any> {
     return this._HttpClient
-      .post(`${this.baseUrl}cart/orders/${cardId}`, {
-        // items:prodInfo,
-        address: orderInfo,
-      })
+      .post(`${this.baseUrl}cart/orders/${cartId}`, checkoutData)
       .pipe(
         catchError((error: HttpErrorResponse) => {
           console.error('An error occurred:', error);
