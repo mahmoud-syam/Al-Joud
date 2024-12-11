@@ -95,14 +95,27 @@ export class CartService {
     );
   }
 
+  // checkOut(cartId: string, checkoutData: any): Observable<any> {
+  //   return this._HttpClient
+  //     .post(`${this.baseUrl}cart/orders/${cartId}`, checkoutData)
+  //     .pipe(
+  //       catchError((error: HttpErrorResponse) => {
+  //         console.error('An error occurred:', error);
+  //         return throwError(
+  //           () => new Error('Failed to check out. Please try again later.')
+  //         );
+  //       })
+  //     );
+  // }
   checkOut(cartId: string, checkoutData: any): Observable<any> {
+    console.log('checkoutDataFrom Service', checkoutData);
     return this._HttpClient
-      .post(`${this.baseUrl}cart/orders/${cartId}`, checkoutData)
+      .post(`${this.baseUrl}orders`, checkoutData) 
       .pipe(
         catchError((error: HttpErrorResponse) => {
           console.error('An error occurred:', error);
           return throwError(
-            () => new Error('Failed to check out. Please try again later.')
+            () => new Error('Failed to check out. Please try again later.') 
           );
         })
       );

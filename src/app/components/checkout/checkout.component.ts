@@ -28,9 +28,29 @@ export class CheckoutComponent implements OnInit {
     // Combine user form data and cart data
     const checkoutData = {
       address: this.orderForm.value,
-      items: this.cart.items // Include cart items
+      items: [
+        {
+            "product_id": 1,
+            "name": "Product Name",
+            "image_url": "https://static01.nyt.com/images/2023/10/27/multimedia/27cakerex-plzm/27cakerex-plzm-jumbo.jpg",
+            "quantity": 2,
+            "unit_amount": 40,  
+            "total_amount": 80   
+        },
+        {
+           "product_id": 2,
+            "name": "test cake",
+            "image_url": "https://static01.nyt.com/images/2023/10/27/multimedia/27cakerex-plzm/27cakerex-plzm-jumbo.jpg",
+            "quantity": 4,
+            "unit_amount": 50,  
+            "total_amount": 80    
+        }
+    ], // Include the actual cart items here please. 
+      // how u will add these next two values think please.
+      shipping_amount: 7.00, 
+      discount_code: "haweil", 
     };
-
+    console.log("checkoutData",checkoutData);
     this._CartService.checkOut(this.cartId, checkoutData).subscribe({
       next: (response) => {
         if (response.message === 'success') {
