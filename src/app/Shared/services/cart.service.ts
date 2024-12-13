@@ -1,12 +1,12 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, throwError } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   constructor(private _HttpClient: HttpClient) {}
-
+  private cartItems:any[] = [];
   private baseUrl: string =
     'https://lightgray-duck-186253.hostingersite.com/api/';
   // Done
