@@ -10,7 +10,7 @@ import { CartService } from 'src/app/Shared/services/cart.service';
 })
 export class CheckoutComponent implements OnInit {
   cartId: any = '';
-  cart: any = {}; // Initialize cart data
+  cart: any = []; 
   items: any = [];
 
   orderForm: FormGroup = new FormGroup({
@@ -27,32 +27,20 @@ export class CheckoutComponent implements OnInit {
 
   handleForm(): void {
     // Combine user form data and cart data
+    console.log("cart ",this.cart)
     const checkoutData = {
       address: this.orderForm.value,
-      items: this.cart.items.map((item: any) => ({
+      items: this.cart.map((item: any) => ({
         product_id: item.product_id,
         name: item.name,
-        image_url: item.image_url,
+        image_url: item.image,
         quantity: item.quantity,
-        unit_amount: item.unit_amount,
-        total_amount: item.unit_amount * item.quantity,
+        unit_amount: item.price,
+        total_amount: item.total_price,
       })),
-      // items: [
-      //   {
-      //       product_id: item.product_id,
-      //       name: item.name,
-      //       image_url: item.image_url,
-      //       quantity: item.quantity,
-      //       unit_amount:  item.unit_amount,  
-      //       total_amount: item.unit_amount * item.quantity   
-      //   }
-      // ],
-     // Include the actual cart items here please. 
-      // how u will add these next two values think please.
       shipping_amount: 7.00, 
       discount_code: "haweil", 
     };
-    console.log(this.orderForm.value);
     
     console.log("checkoutData",checkoutData);
     this._CartService.checkOut(this.cartId, checkoutData).subscribe({
@@ -67,27 +55,6 @@ export class CheckoutComponent implements OnInit {
       },
     });
   }
-
-  // ngOnInit(): void {
-  //   this._ActivatedRoute.paramMap.subscribe({
-  //     next: (params) => {
-  //       this.cartId = params.get('id'); // Get the cart ID from the route parameters.
-  //       // Fetch cart data by cartId
-  //       this._CartService.getCartUser().subscribe({
-  //         next: (cart) => {
-  //           this.cart = cart; // Assign fetched cart data
-  //         },
-  //         error: (error) => {
-  //           console.error(error);
-  //         }
-  //       });
-  //       console.log(this.cartId);
-  //     },
-  //     error: (error) => {
-  //       console.error(error);
-  //     },
-  //   });
-  // }
   ngOnInit(): void {
     this._ActivatedRoute.paramMap.subscribe({
       next: (params) => {
@@ -103,8 +70,8 @@ export class CheckoutComponent implements OnInit {
   private fetchCart(): void {
     this._CartService.getCartUser().subscribe({
       next: (cart) => {
-        this.cart = cart;
-        console.log('Cart loaded:', cart);
+        this.cart = cart.cart;
+        console.log('Cart loaded:', cart.cart);
       },
       error: (error) => {
         console.error('Failed to load cart:', error);
