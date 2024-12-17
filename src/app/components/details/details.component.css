@@ -67,3 +67,15 @@
 .product-img img {
     width: 65% !important;
 }
+@media (max-width:992px) {
+    .product-page .img-title {
+        width: 360px !important;
+    }
+    .title h2{
+        font-size:18px;
+        top: 42px !important;
+    }
+    .product-img img {
+        width: 100% !important;
+    }
+}

@@ -27,7 +27,7 @@ export class CheckoutComponent implements OnInit {
 
   handleForm(): void {
     // Combine user form data and cart data
-    console.log("cart ",this.cart)
+    // console.log("cart ",this.cart)
     const checkoutData = {
       address: this.orderForm.value,
       items: this.cart.map((item: any) => ({
@@ -38,16 +38,17 @@ export class CheckoutComponent implements OnInit {
         unit_amount: item.price,
         total_amount: item.total_price,
       })),
-      shipping_amount: 7.00, 
+      shipping_amount: 0.00, 
       discount_code: "haweil", 
     };
     
-    console.log("checkoutData",checkoutData);
+    // console.log("checkoutData",checkoutData);
     this._CartService.checkOut(this.cartId, checkoutData).subscribe({
       next: (response) => {
-        if (response.message == 'success') {
-          window.open(response.session.url, '_self');
-        }
+        // if (response.status == 'success') {
+        //   window.open(response.session.url, '_self');
+        // }
+        window.open(response, '_self');
         console.log(response);
       },
       error: (error) => {
