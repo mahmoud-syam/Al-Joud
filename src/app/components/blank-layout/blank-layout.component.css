@@ -1,6 +1,6 @@
 .btn-up{
     position: fixed;
-    bottom: 10px;
+    bottom: 10px !important;
     right: 10px !important;
     z-index: 99999;
     width: 40px !important;
@@ -12,4 +12,5 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     background-color: var(--main-color) !important;
+    color: white !important;
 }

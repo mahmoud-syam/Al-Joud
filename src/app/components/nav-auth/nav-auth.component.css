@@ -11,7 +11,11 @@ img{
     object-fit: cover;
 }
 .navbar-brand img{
-    height: 52px;
+    height: 52px !important;
+    object-fit: cover;
+}
+.navbar-brand-left img{
+    height: 52px !important;
     object-fit: cover;
 }
 a:not(.dropdown-item){
@@ -73,3 +77,16 @@ a:not(.dropdown-item){
         display: none !important;
     }
 }
+@media (max-width: 768px) {
+    .navbar-brand-left,
+    .navbar-brand {
+      max-width: 120px; /* Smaller logo on mobile screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar-brand-left,
+    .navbar-brand {
+      max-width: 70px; /* Even smaller logo for very small screens */
+    }
+  }

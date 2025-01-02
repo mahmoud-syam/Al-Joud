@@ -11,11 +11,11 @@ img{
     object-fit: cover;
 }
 .navbar-brand img{
-    height: 52px;
+    height: 52px !important;
     object-fit: cover;
 }
 .navbar-brand-left img{
-    height: 52px;
+    height: 52px !important;
     object-fit: cover;
 }
 a:not(.dropdown-item){
@@ -64,6 +64,15 @@ a:not(.dropdown-item){
     color: #fff !important;
     background-color: transparent !important;
 }
+/* .show{
+    background-color: #b9935a;
+} */
+
+.navbar-nav .nav-link{
+    /* padding: auto 7px !important; */
+    padding-left: 7px !important;
+    padding-right: 7px !important;
+}
 @media (max-width: 768px){
     .navbar-brand{
         display: none !important;
@@ -73,7 +82,50 @@ a:not(.dropdown-item){
     .navbar-brand{
         display: block;
     }
-    .navbar-brand-left{
+    .navbar-brand-left
+    {
         display: none !important;
     }
+    
 }
+@media (max-width: 768px) {
+    .navbar-brand-left,
+    .navbar-brand {
+      max-width: 120px; /* Smaller logo on mobile screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar-brand-left,
+    .navbar-brand {
+      max-width: 70px; /* Even smaller logo for very small screens */
+    }
+  }
+
+
+
+  .navbar.active {
+    background-color: #b9935a; /* لون جديد عند الضغط */
+    color: #ffffff; /* لون النص في الوضع النشط */
+  }
+  
+
+  .text-start {
+    text-align: start;
+  }
+  .text-end {
+    text-align: end;
+  }
+  .ms-auto {
+    margin-inline-start: auto;
+  }
+  .me-auto {
+    margin-inline-end: auto;
+  }
+  .ms-2 {
+    margin-inline-start: 0.5rem;
+  }
+  .me-2 {
+    margin-inline-end: 0.5rem;
+  }
+  

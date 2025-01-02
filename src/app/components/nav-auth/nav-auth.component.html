@@ -5,46 +5,51 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- left-->
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase" aria-current="page" routerLinkActive="active-link"
-                        routerLink="home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase " aria-current="page" routerLinkActive="active-link"
-                        routerLink="about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-uppercase " aria-current="page" routerLinkActive="active-link"
-                        routerLink="products">Shop</a>
-                </li>
-                <!-- DropDown -->
-        <li class="nav-item dropdown text-uppercase" aria-current="page" routerLinkActive="active-link">
-            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              More
-            </a>
-            <ul class="dropdown-menu ">
-              <li><a class="dropdown-item" routerLink="/category">Categories</a></li>
-              <li>
-                <hr class="dropdown-divider">
+            <ul class="navbar-nav me-lg-auto mb-2 mb-lg-0 d-flex align-items-center">
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" aria-current="page" routerLinkActive="active-link"
+                  routerLink="home">{{'NAVAUTH.HOME' | translate}}</a>
               </li>
-              <li><a class="dropdown-item">Another action</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown text-uppercase" aria-current="page" routerLinkActive="active-link">
-            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Lang
-            </a>
-            <ul class="dropdown-menu text-center ">
-              <li><a class="dropdown-item">AR</a></li>
-              <li>
-                <hr class="dropdown-divider">
+              <li class="nav-item">
+                <a class="nav-link text-uppercase " aria-current="page" routerLinkActive="active-link"
+                  routerLink="about">{{'NAVAUTH.ABOUT' | translate}}</a>
               </li>
-              <li><a class="dropdown-item">EN</a></li>
-              <li><a class="dropdown-item">DE</a></li>
-            </ul>
-          </li>
-         
+              <li class="nav-item">
+                <a class="nav-link text-uppercase " aria-current="page" routerLinkActive="active-link"
+                  routerLink="products">{{'NAVAUTH.SHOP' | translate}}</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-uppercase " aria-current="page" routerLinkActive="active-link"
+                  routerLink="/category">{{'NAVAUTH.Categories' | translate}}</a>
+              </li>
+              <!-- DropDown -->
+              
+              <!-- <li class="nav-item dropdown text-uppercase" aria-current="page" >
+                <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  More
+                </a>
+                <ul class="dropdown-menu ">
+                  <li routerLinkActive="active-link"><a class="dropdown-item" routerLink="/category">Categories</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item">Another action</a></li>
+                </ul>
+              </li> -->
+              <li class="nav-item dropdown text-uppercase" aria-current="page" routerLinkActive="active-link">
+                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  {{'NAVBAR.Lang' | translate}}
+                </a> 
+                 <ul class="dropdown-menu text-center ">
+                  <li><a class="dropdown-item" (click)="changeLanguage('ar')">{{'NAVAUTH.AR' | translate}}</a></li>
+                  <li>
+                    <!-- <hr class="dropdown-divider"> -->
+                  </li>
+                  <li><a class="dropdown-item" (click)="changeLanguage('en')">{{'NAVAUTH.EN' | translate}}</a></li>
+                  <li><a class="dropdown-item" (click)="changeLanguage('de')">{{'NAVAUTH.DE' | translate}}</a></li>
+                </ul>
+                
+              </li>
             </ul>
 
             <a class="navbar-brand me-auto" routerLink="home">
@@ -58,11 +63,11 @@
         <!-- Right -->
         <div class="right d-flex flex-row gap-4 m-auto collapse " id="navbarSupportedContent">
             <a class="navbar" aria-current="page" routerLink="register">
-                <a class="nav-link text-uppercase text-main " routerLinkActive="text-main" routerLink="register">Register</a>
+                <a class="nav-link text-uppercase text-main " routerLinkActive="text-main" routerLink="register">{{'NAVAUTH.Register' | translate}}</a>
                 <i class="fas fa-user-circle fa-fw"></i>
             </a>
             <a class="navbar" aria-current="page" routerLink="cart">
-                <a class="nav-link text-uppercase text-main " routerLinkActive="text-main" routerLink="cart">Cart</a>
+                <a class="nav-link text-uppercase text-main " routerLinkActive="text-main" routerLink="cart">{{'NAVAUTH.Cart' | translate}}</a>
                 <i class="fas fa-shopping-cart fa-fw"></i>
             </a>
         </div>

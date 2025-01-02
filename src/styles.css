@@ -38,6 +38,16 @@
     text-align: right;
   }
 /* Utilities */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
 a {
     color: #fff;
     text-decoration: none !important;

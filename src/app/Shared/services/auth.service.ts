@@ -24,7 +24,7 @@ export class AuthService {
   // Method to register a user
   setRegister(userData: object): Observable<any> {
     return this._HttpClient.post(
-      `https://lightgray-duck-186253.hostingersite.com/api/register`,
+      `https://paleturquoise-locust-233443.hostingersite.com/api/register`,
       userData
     );
   }
@@ -32,7 +32,7 @@ export class AuthService {
   // Method to login a user
   setLogin(userData: object): Observable<any> {
     return this._HttpClient.post(
-      `https://lightgray-duck-186253.hostingersite.com/api/login`,
+      `https://paleturquoise-locust-233443.hostingersite.com/api/login`,
       userData
     );
   }

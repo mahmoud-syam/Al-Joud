@@ -9,9 +9,9 @@ export class ForgetpassService {
 
   constructor(private _HttpClient: HttpClient) { }
 
-  baseUrl: string = 'https://lightgray-duck-186253.hostingersite.com/api/';
+  baseUrl: string = 'https://paleturquoise-locust-233443.hostingersite.com/api/';
   forgetPassword(userEmail: object): Observable<any> {
-    return this._HttpClient.post('https://lightgray-duck-186253.hostingersite.com/api/forgot-password', userEmail)
+    return this._HttpClient.post('https://paleturquoise-locust-233443.hostingersite.com/api/forgot-password', userEmail)
   }
   resetCode(resetCode: object): Observable<any> {
     return this._HttpClient.post(this.baseUrl + 'reset-password', resetCode)

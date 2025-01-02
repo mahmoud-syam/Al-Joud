@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ApidataService } from 'src/app/apidata.service';
 import { Category } from 'src/app/Shared/interfaces/category';
 import { Product } from 'src/app/Shared/interfaces/product';
+import { TranslationService } from 'src/app/Shared/services/translation.service';
 
 @Component({
   selector: 'app-category',
@@ -10,14 +11,20 @@ import { Product } from 'src/app/Shared/interfaces/product';
   styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
-  constructor(private _ApidataService: ApidataService , private _Router:Router) {}
+  constructor(private _ApidataService: ApidataService , private _Router:Router,private _TranslationService: TranslationService) {}
   products: Product[] = [];
   categories: Category[] = [];
   currentPath: string = '';
+  // Language
+  currentLanguage: string = 'en';
 
 
 
   ngOnInit(): void {
+     // Language
+  this._TranslationService.getLanguage().subscribe((lang) => {
+    this.currentLanguage = lang;
+  });
     // get product
     this._ApidataService.getProducts().subscribe({
       next: (response) => {

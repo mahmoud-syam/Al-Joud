@@ -32,15 +32,24 @@ export class NavbarComponent implements OnInit {
 
   isLoggedIn = false;
   username: string | null = null;
+  // Language
+  currentLanguage: string = 'en';
+  isArabic = false; // افتراضياً اللغة ليست عربية
 
   // Change Bt Language
   changeLanguage(lang: string) {
     this._TranslationService.setLanguage(lang);
+    this.isArabic = lang === 'ar'; // إذا كانت اللغة عربية، قم بتحديث isArabic
+    // this._TranslationService.use(lang); 
   }
 
   isscrolling: boolean = true;
 
   ngOnInit(): void {
+     // Language
+     this._TranslationService.getLanguage().subscribe((lang) => {
+      this.currentLanguage = lang;
+    });
     window.addEventListener('scroll', () => {
       if (window.scrollY > 30) {
         this.isscrolling = false;
@@ -71,4 +80,8 @@ export class NavbarComponent implements OnInit {
     this.username = null;
     this._ToastrService.success('Logged Out Successfully');
   }
+
+
+
+  
 }

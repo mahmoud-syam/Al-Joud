@@ -8,7 +8,7 @@ export class CartService {
   constructor(private _HttpClient: HttpClient) {}
   private cartItems:any[] = [];
   private baseUrl: string =
-    'https://lightgray-duck-186253.hostingersite.com/api/';
+    'https://paleturquoise-locust-233443.hostingersite.com/api/';
   // Done
   addToCart(prodId: string): Observable<any> {
     return this._HttpClient

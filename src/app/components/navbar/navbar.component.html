@@ -5,22 +5,22 @@
 
     <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
       <!-- left-->
-      <ul class="navbar-nav me-lg-auto mb-2 mb-lg-0 d-flex align-items-center">
+      <ul class="navbar-nav me-lg-auto mb-2 mb-lg-0 d-flex align-items-center" [ngClass]="{'text-end': !isArabic, 'text-start': isArabic}">
         <li class="nav-item">
           <a class="nav-link text-uppercase" aria-current="page" routerLinkActive="active-link"
-            routerLink="home">Home</a>
+            routerLink="home">{{'NAVBAR.HOME' | translate}}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-uppercase " aria-current="page" routerLinkActive="active-link"
-            routerLink="about">About</a>
+            routerLink="about">{{'NAVBAR.ABOUT' | translate}}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-uppercase " aria-current="page" routerLinkActive="active-link"
-            routerLink="products">Shop</a>
+            routerLink="products">{{'NAVBAR.SHOP' | translate}}</a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-uppercase " aria-current="page" routerLinkActive="active-link"
-            routerLink="/category">Categories</a>
+            routerLink="/category">{{'NAVBAR.Categories' | translate}}</a>
         </li>
         <!-- DropDown -->
         
@@ -38,15 +38,15 @@
         </li> -->
         <li class="nav-item dropdown text-uppercase" aria-current="page" routerLinkActive="active-link">
            <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Lang
+            {{'NAVBAR.Lang' | translate}}
           </a> 
            <ul class="dropdown-menu text-center ">
-            <li><a class="dropdown-item" (click)="changeLanguage('ar')">AR</a></li>
+            <li><a class="dropdown-item" (click)="changeLanguage('ar')">{{'NAVBAR.AR' | translate}}</a></li>
             <li>
               <!-- <hr class="dropdown-divider"> -->
             </li>
-            <li><a class="dropdown-item" (click)="changeLanguage('en')">EN</a></li>
-            <li><a class="dropdown-item" (click)="changeLanguage('de')">DE</a></li>
+            <li><a class="dropdown-item" (click)="changeLanguage('en')">{{'NAVBAR.EN' | translate}}</a></li>
+            <li><a class="dropdown-item" (click)="changeLanguage('de')">{{'NAVBAR.DE' | translate}}</a></li>
           </ul>
           
         </li>
@@ -68,26 +68,26 @@
         </a>
         <ul class="dropdown-menu " >
           <li >
-            <a class="dropdown-item " role="button"><span>Welcome
+            <a class="dropdown-item " role="button"><span>{{'NAVBAR.Welcome' | translate}}
               <!-- , {{ username }}! -->
             </span></a>
           </li>
           <li>
-            <a class="dropdown-item " routerLink="/forgetpassword" routerLinkActive="active-link " role="button">Forget Password</a>
+            <a class="dropdown-item " routerLink="/forgetpassword" routerLinkActive="active-link " role="button">{{'NAVBAR.FORGET' | translate}}</a>
           </li>
           <li>
             <hr class="dropdown-divider">
           </li>
-          <li><a class="dropdown-item"  (click)="signOut()" >Sign Out</a></li>
+          <li><a class="dropdown-item"  (click)="signOut()" >{{'NAVBAR.SIGNOUT' | translate}}</a></li>
         </ul>
       </li>
       <!-- -------------------------------------------------------------- -->
       <a class="navbar" aria-current="page" routerLink="login" *ngIf="!isLoggedIn" (click)="login()">
-        <a class="nav-link text-uppercase text-main " routerLinkActive="text-main" routerLink="login">login</a>
+        <a class="nav-link text-uppercase text-main " routerLinkActive="text-main" routerLink="login">{{'NAVBAR.LOGIN' | translate}}</a>
         <i class="fas fa-user-circle fa-fw"></i>
       </a>
       <a class="navbar" aria-current="page" routerLink="cart">
-        <a class="nav-link text-uppercase text-main " routerLinkActive="text-main" routerLink="cart">Cart</a>
+        <a class="nav-link text-uppercase text-main " routerLinkActive="text-main" routerLink="cart">{{'NAVBAR.Cart' | translate}}</a>
         <div class="position-relative">
           <i class="fas fa-shopping-cart fa-1x "></i>
         <!-- <span class="badge  position-absolute bottom-50 start-50"> 0 </span> -->
@@ -95,7 +95,7 @@
       </a>
 
     </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" data-bs-target="#navbarSupportedContent"
+    <button class="navbar-toggler" id="toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

@@ -14,11 +14,11 @@
           <div
             class="cont position-absolute rounded rounded-2 cursor-pointer px-1"
           >
-            Straight to Your Door
+          {{'CATEGORY.H2' | translate}}
           </div>
           <div class="btn text-uppercase rounded rounded-5">
-            add <br />
-            <span class="text-muted">to cart</span>
+            {{'CATEGORY.BTN1' | translate}} <br />
+            <span class="text-muted">{{'CATEGORY.BTN2' | translate}}</span>
           </div>
         </div>
         <h4 class="text-black mt-2">{{ category.name }}</h4>
@@ -36,7 +36,7 @@
         type="search"
         placeholder="Search..."
       />
-      <h3 class="h4 pt-3">Categories</h3>
+      <h3 class="h4 pt-3">{{'CATEGORY.CATE1' | translate}}</h3>
       <ul class="px-2">
         <li>
           <input type="checkbox" id="myCheck" onclick="myFunction()" />
@@ -47,9 +47,9 @@
           Baklava
         </li>
       </ul>
-      <h3>Price</h3>
+      <h3>{{'CATEGORY.Price' | translate}}</h3>
       <input class="form-range" type="range" min="0" max="500" />
-      <h3 class="h4 my-3">Popular Products</h3>
+      <h3 class="h4 my-3">{{'CATEGORY.Popular-Products' | translate}}</h3>
       <ul class="px-2 ">
         <li class="d-flex align-items-center " *ngFor="let product of products">
           <img
@@ -62,7 +62,7 @@
         
       </ul>
       <div class="social-list text-center my-4">
-        <div class="info h4">follow us</div>
+        <div class="info h4">{{'CATEGORY.follow-us' | translate}}</div>
         <a class="m-1"><i class="fab fa-twitter fa-fw"></i></a>
         <a class="m-1"><i class="fab fa-facebook-f fa-fw"></i></a>
         <a class="m-1"><i class="fab fa-instagram fa-fw"></i></a>

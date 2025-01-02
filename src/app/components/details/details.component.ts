@@ -5,6 +5,7 @@ import { ApidataService } from 'src/app/apidata.service';
 import { Product } from 'src/app/Shared/interfaces/product';
 import { CartService } from 'src/app/Shared/services/cart.service';
 import { ToastrService } from 'ngx-toastr';
+import { TranslationService } from 'src/app/Shared/services/translation.service';
 
 @Component({
   selector: 'app-details',
@@ -16,9 +17,12 @@ export class DetailsComponent implements OnInit {
     private _ActivatedRoute: ActivatedRoute,
     private _ApidataService: ApidataService,
     private _CartService: CartService,
-    private _ToastrService: ToastrService
+    private _ToastrService: ToastrService,
+    private _TranslationService: TranslationService
   ) {}
   products: Product[] = [];
+  // Language
+  currentLanguage: string = 'en';
 
   // carousel options
   productSlider: OwlOptions = {
@@ -51,6 +55,11 @@ export class DetailsComponent implements OnInit {
   // to store the product details
   productDetails: Product = {} as Product;
   ngOnInit(): void {
+    // Language
+  this._TranslationService.getLanguage().subscribe((lang) => {
+    this.currentLanguage = lang;
+  });
+
     this._ActivatedRoute.paramMap.subscribe({
       next: (params) => {
         let idProduct: any = params.get('id');

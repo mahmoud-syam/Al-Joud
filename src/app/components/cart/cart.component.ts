@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { CartService } from 'src/app/Shared/services/cart.service';
+import { TranslationService } from 'src/app/Shared/services/translation.service';
 
 @Component({
   selector: 'app-cart',
@@ -11,14 +12,14 @@ export class CartComponent implements OnInit {
   cartDetails: any[] = [];
   currentLanguage: string = 'en';
 
-  constructor(private _CartService: CartService, private _TranslationService:TranslateService) {}
+  constructor(private _CartService: CartService, private _TranslationService:TranslationService) {}
 
   ngOnInit(): void {
 
-    //  // Language
-    //  this._TranslationService.getLanguage().subscribe((lang) => {
-    //   this.currentLanguage = lang;
-    // });
+   // Language
+  this._TranslationService.getLanguage().subscribe((lang) => {
+    this.currentLanguage = lang;
+  });
 
     this._CartService.getCartUser().subscribe({
       next: (response) => {
