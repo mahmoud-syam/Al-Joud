@@ -34,12 +34,12 @@ export class NavbarComponent implements OnInit {
   username: string | null = null;
   // Language
   currentLanguage: string = 'en';
-  isArabic = false; // افتراضياً اللغة ليست عربية
+  isArabic = false;
 
   // Change Bt Language
   changeLanguage(lang: string) {
     this._TranslationService.setLanguage(lang);
-    this.isArabic = lang === 'ar'; // إذا كانت اللغة عربية، قم بتحديث isArabic
+    this.isArabic = lang === 'ar';
     // this._TranslationService.use(lang); 
   }
 

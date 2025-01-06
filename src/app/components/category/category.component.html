@@ -6,25 +6,27 @@
   </div>
   <div class="main-container container">
     <!-- Product Grid -->
-    <section class="product-grid">
+    <section class="product-grid"  >
       <!-- Cart -->
-      <div class="product-card" *ngFor="let category of categories">
+      <div class="product-card" *ngFor="let product of products.slice(0, 9) ">
         <div class="img-cont position-relative">
-          <img class="img" [src]="category.image" [alt]="category.name" />
+          <img class="img" [src]="product.images[0]" [alt]="product.name" />
           <div
             class="cont position-absolute rounded rounded-2 cursor-pointer px-1"
           >
           {{'CATEGORY.H2' | translate}}
           </div>
-          <div class="btn text-uppercase rounded rounded-5">
+          <div class="btn text-uppercase rounded rounded-5" (click)="addProduct(product.id)">
             {{'CATEGORY.BTN1' | translate}} <br />
             <span class="text-muted">{{'CATEGORY.BTN2' | translate}}</span>
           </div>
         </div>
-        <h4 class="text-black mt-2">{{ category.name }}</h4>
-        <!-- ERORRRRRRRR -->
-        <h4 class="text-muted h6">{{ category.slug }}</h4> 
-        <!-- <p>{{category.base_price | currency:'EUR'}} - {{category.base_price | currency:'EUR'}}</p> -->
+        <div [routerLink]="['/details' , product.id]">
+          <h4 class="text-black mt-2">{{ product.name }}</h4>
+          <!-- ERORRRRRRRR -->
+          <h4 class="text-muted h6">{{ product.slug }}</h4> 
+          <!-- <p>{{category.base_price | currency:'EUR'}} - {{category.base_price | currency:'EUR'}}</p> -->
+        </div>
       </div>
 
       <!-- Add more product cards here -->

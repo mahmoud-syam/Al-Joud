@@ -56,7 +56,7 @@
             <h2 class="text-uppercase position-absolute">{{'HOME.BestSellers' | translate}}</h2>
         </div>
         <div class="row pt-4 px-5">
-            <div class="col-md-3 col-sm-6" *ngFor="let product of products.slice(0, 9) ">
+            <div class="col-md-3 col-sm-6" *ngFor="let product of products.slice(0, 8) ">
                 <!-- product -->
                 <div class="box-content">
                     <div [routerLink]="['/details' , product.id]">
@@ -66,7 +66,7 @@
                             </div>
                         </div>
                         <div class="box-info text-center pt-2 pb-2">
-                            <h2> {{product.name}} </h2>
+                            <h2> {{product.name }} </h2>
                             <h3> {{product.base_price | currency:'EUR' }} </h3>
                             <!-- <a routerLink="./category">lorem</a> -->
                         </div>
@@ -182,7 +182,7 @@
 <section class="pistachio-section ">
     <div class="title text-center mt-1 position-relative">
         <img class="img-title" src=" ./assets/Gallary/frame2.png" alt="">
-        <h2 class="text-uppercase position-absolute"> {{'HOME.pistachio-section1' | translate}} <br> {{'pistachio-section2' | translate}}</h2>
+        <h2 class="text-uppercase position-absolute"> {{'HOME.pistachio-section1' | translate}} <br> {{'HOME.pistachio-section2' | translate}}</h2>
     </div>
     <div class="pistachio-section-cont">
         <div class="container py-3">
@@ -247,12 +247,12 @@
 <section class="about py-4">
     <div class="container">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-4">
                 <div class="img">
                     <img src=" ./assets/Gallary//home-logo.png" alt="home-logo">
                 </div>
             </div>
-            <div class="col-md-7 text-center">
+            <div class="col-md-8 text-center">
                 <div class="about-cont ">
                     <h2 class="text-uppercase text-main">{{'HOME.about1' | translate}}</h2>
                     <p>{{'HOME.about2' | translate}}</p>

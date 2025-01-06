@@ -95,7 +95,7 @@ a:not(.dropdown-item){
     }
   }
   
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
     .navbar-brand-left,
     .navbar-brand {
       max-width: 70px; /* Even smaller logo for very small screens */
@@ -104,28 +104,29 @@ a:not(.dropdown-item){
 
 
 
-  .navbar.active {
+.navbar.active {
     background-color: #b9935a; /* لون جديد عند الضغط */
     color: #ffffff; /* لون النص في الوضع النشط */
   }
   
 
-  .text-start {
+.text-start {
     text-align: start;
   }
-  .text-end {
+.text-end {
     text-align: end;
   }
-  .ms-auto {
+.ms-auto {
     margin-inline-start: auto;
   }
-  .me-auto {
+.me-auto {
     margin-inline-end: auto;
   }
-  .ms-2 {
+.ms-2 {
     margin-inline-start: 0.5rem;
   }
-  .me-2 {
+.me-2 {
     margin-inline-end: 0.5rem;
+    
   }
   
